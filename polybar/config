@@ -1,0 +1,222 @@
+[bar/topbar]
+monitor = ${env:MONITOR}
+
+width = 100%
+height = 24
+radius = 0
+fixed-center = false
+
+background = #a01f1f1f
+foreground = #c6c6c6
+
+line-size = 3
+line-color =
+
+border-size = 0
+border-color =
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = "font\-logos:size=16;4"
+font-1 = "Roboto:size=9:weight=medium;3"
+font-2 = "Font Awesome 5 Free:style=Solid:size=12;3"
+font-3 = "Font Awesome 5 Brands:size=8;2"
+font-4 = "Material Icons:size=12;4"
+
+modules-left = arch updates-arch-combined i3
+modules-center = title
+modules-right = gmail available-space eth wlan date battery powermenu
+
+tray-position = none
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/gmail]
+type = custom/script
+exec = ~/.config/polybar/gmail/launch.py
+interval = 60
+format-prefix = " "
+format-prefix-foreground = #8abeb7
+format-padding = 1
+
+[module/arch]
+type = custom/text
+content = 
+content-padding = 2
+content-background = #8abeb7
+content-foreground = #1f1f1f
+click-left = rofi -show run
+
+[module/updates-arch-combined]
+type = custom/script
+exec = ~/.config/polybar/updates-arch-combined.sh
+interval = 600
+format-prefix = " "
+format-prefix-foreground = #8abeb7
+format-padding = 1
+
+[module/available-space]
+type = internal/fs
+mount-0 = /
+interval = 10
+format-mounted = <label-mounted>
+label-mounted = %free%
+format-mounted-prefix = " "
+format-mounted-prefix-foreground = #8abeb7
+format-mounted-padding = 1
+
+[module/i3]
+pin-workspaces = true
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+format-padding = 1
+
+label-mode-padding = 2
+label-mode-foreground = #8abeb7
+label-mode-background = #1f1f1f
+
+label-focused = "%name%"
+label-focused-font = 3
+label-focused-foreground = #8abeb7
+label-focused-underline-size = 3
+label-focused-underline = #8abeb7
+label-focused-padding = 2
+
+label-unfocused = %name%
+label-unfocused-font = 3
+label-unfocused-padding = 2
+
+label-visible = %name%
+label-visible-font = 3
+label-visible-padding = 2
+
+label-urgent = %name%
+label-urgent-font = 3
+label-urgent-background = #ba2922
+label-urgent-foreground = #c6c6c6
+label-urgent-padding = 2
+
+[module/title]
+type = internal/xwindow
+format = <label>
+format-padding = 2
+
+label = %title%
+label-maxlen = 50
+label-foreground = #8abeb7
+
+[module/wlan]
+type = internal/network
+interface = wlp2s0
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-padding = 1
+label-connected = %local_ip% (%essid%)
+format-disconnected =
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = #8abeb7
+
+[module/eth]
+type = internal/network
+interface = enp62s0u1u2
+interval = 3.0
+
+format-connected-padding = 1
+format-connected-prefix = " "
+format-connected-prefix-foreground = #8abeb7
+label-connected = %local_ip%
+
+format-disconnected =
+
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+date-alt = " %Y-%m-%d"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix = 
+format-prefix-foreground = #8abeb7
+format-padding = 1
+
+label = %date% %time%
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+
+label-discharging = %percentage%%
+label-charging = %percentage%%
+label-full = %percentage%%
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+format-charging = <ramp-capacity> <label-charging>
+format-full-padding = 1
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = #8abeb7
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-padding = 1
+
+label-open = 
+label-open-foreground = #8abeb7
+label-close =  cancel
+label-close-foreground = #8abeb7
+label-separator = |
+label-separator-foreground = #8abeb7
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+menu-0-2 = log off
+menu-0-2-exec = menu-open-3
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = reboot
+
+menu-2-0 = power off
+menu-2-0-exec = poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+menu-3-0 = log off
+menu-3-0-exec = pkill -KILL -u $USER
+menu-3-1 = cancel
+menu-3-1-exec = menu-open-0
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
