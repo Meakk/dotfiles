@@ -8,7 +8,7 @@
 #------------------------------------------------------------
 
 [global]
-font = Roboto 13
+font = Roboto 9
 
 # Allow a small subset of html markup:
 #   <b>bold</b>
@@ -31,7 +31,7 @@ plain_text = no
 #   %I  iconname (without its path)
 #   %p  progress value if set ([  0%] to [100%]) or nothing
 # Markup is allowed
-format = "<b>%s</b>\n%b"
+format = "<span font='12' color='#8abeb7' font_weight='bold'>%s</span>\n%b"
 
 # Sort messages by urgency.
 sort = no
@@ -165,12 +165,12 @@ browser = /usr/bin/vivaldi-stable -new-tab
 
 # Align icons left/right/off
 icon_position = left
-max_icon_size = 70
+max_icon_size = 50
 
 # Paths to default icons.
 icon_path = /usr/share/icons/breeze-dark/16x16/mimetypes/:/usr/share/icons/breeze-dark/48x48/status/:/usr/share/icons/breeze-dark/16x16/devices/:/usr/share/icons/breeze-dark/48x48/notifications/:/usr/share/icons/breeze-dark/48x48/emblems/:/usr/share/icons/breeze-dark/apps/scalable
 
-frame_width = 5
+frame_width = 3
 #frame_color = "#FF0000"
 
 [shortcuts]
@@ -192,19 +192,19 @@ context = ctrl+shift+period
 [urgency_low]
 # IMPORTANT: colors have to be defined in quotation marks.
 # Otherwise the "#" and following would be interpreted as a comment.
-frame_color = "#8abeb7"
+frame_color = "#ff8080"
 foreground  = "#c6c6c6"
 background  = "#1f1f1f"
 timeout     = 4
 
 [urgency_normal]
-frame_color = "#8abeb7"
+frame_color = "#ff8080"
 foreground  = "#c6c6c6"
 background  = "#1f1f1f"
 timeout     = 6
 
 [urgency_critical]
-frame_color = "#ff0000"
+frame_color = "#ff8080"
 foreground  = "#c6c6c6"
 background  = "#1f1f1f"
 timeout     = 8
