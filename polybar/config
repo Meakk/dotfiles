@@ -21,7 +21,7 @@ padding-right = 1
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = "font\-logos:size=16;4"
+font-0 = "font\-logos:size=12;3"
 font-1 = "Roboto:size=9:weight=medium;3"
 font-2 = "Font Awesome 5 Free:style=Solid:size=12;3"
 font-3 = "Font Awesome 5 Brands:size=8;2"
