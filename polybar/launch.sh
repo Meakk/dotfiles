@@ -1,10 +1,12 @@
 #!/bin/env sh
 
 pkill polybar
-sleep 1
+
+eth=$(ip link show | grep enp | sed -E "s/.*(enp.*):.*/\1/g" | head -n 1)
+wlan=$(ip link show | grep enp | sed -E "s/.*(wlp.*):.*/\1/g" | head -n 1)
 
 lines=$(polybar -m | sed -e 's/:.*$//g')
 for mon in $lines
 do
-  MONITOR=$mon polybar topbar &
+  WLAN=$wlan ETH=$eth MONITOR=$mon polybar topbar &
 done

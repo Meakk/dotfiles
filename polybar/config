@@ -114,7 +114,7 @@ label-foreground = #8abeb7
 
 [module/wlan]
 type = internal/network
-interface = wlp2s0
+interface = $(env:WLAN}
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -131,7 +131,7 @@ ramp-signal-foreground = #8abeb7
 
 [module/eth]
 type = internal/network
-interface = enp62s0u1u2
+interface = ${env:ETH}
 interval = 3.0
 
 format-connected-padding = 1
