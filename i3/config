@@ -151,12 +151,13 @@ mode "resize" {
 }
 
 # Autostart applications
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec --no-startup-id nm-applet
+exec_always --no-startup-id nitrogen --restore
 #exec --no-startup-id ~/.config/conky/startup.sh
+exec_always --no-startup-id pkill compton; compton -b
 exec_always --no-startup-id dunst &
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id numlockx on
+exec_always --no-startup-id setxkbmap fr
 
 # Theme colors
 set $color #8abeb7
