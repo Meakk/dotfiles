@@ -8,5 +8,5 @@ wlan=$(ip link show | grep wlp | sed -E "s/.*(wlp.*):.*/\1/g" | head -n 1)
 lines=$(polybar -m | sed -e 's/:.*$//g')
 for mon in $lines
 do
-  WLAN=$wlan ETH=$eth MONITOR=$mon polybar topbar &
+  CHECKUPDATES_DB=$(mktemp -d) WLAN=$wlan ETH=$eth MONITOR=$mon polybar topbar &
 done
