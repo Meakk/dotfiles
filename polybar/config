@@ -2,7 +2,7 @@
 monitor = ${env:MONITOR}
 
 width = 100%
-height = 24
+height = 22
 radius = 0
 fixed-center = false
 
@@ -22,14 +22,15 @@ module-margin-left = 0
 module-margin-right = 0
 
 font-0 = "font\-logos:size=12;3"
-font-1 = "Roboto:size=9:weight=medium;3"
+font-1 = "Roboto:size=9:weight=medium;2"
 font-2 = "Font Awesome 5 Free:style=Solid:size=10;3"
 font-3 = "Font Awesome 5 Brands:size=8;2"
-font-4 = "Material Icons:size=12;4"
+font-4 = "Material Icons:size=12;3"
+font-5 = "DejaVu Sans:size=22:antialias=false;2"
 
-modules-left = arch updates-arch-combined i3
+modules-left = slope2 slope4 arch slope2 updates-arch-combined i3
 modules-center = title
-modules-right = gmail available-space eth wlan date battery powermenu
+modules-right = gmail available-space vpn eth wlan volume date battery slope3 powermenu slope1 slope3
 
 tray-position = none
 
@@ -47,7 +48,7 @@ format-padding = 1
 [module/arch]
 type = custom/text
 content = 
-content-padding = 2
+content-padding = 1
 content-background = #8abeb7
 content-foreground = #1f1f1f
 click-left = rofi -show run
@@ -112,6 +113,55 @@ label = %title%
 label-maxlen = 50
 label-foreground = #8abeb7
 
+[module/slope1]
+type = custom/text
+content = "◣"
+content-foreground = #8abeb7
+content-background = #1f1f1f
+
+[module/slope2]
+type = custom/text
+content = "◤"
+content-foreground = #8abeb7
+content-background = #1f1f1f
+
+[module/slope3]
+type = custom/text
+content = "◥"
+content-foreground = #8abeb7
+content-background = #1f1f1f
+
+[module/slope4]
+type = custom/text
+content = "◢"
+content-foreground = #8abeb7
+content-background = #1f1f1f
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume> <label-volume>
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-foreground = #8abeb7
+
+label-volume = "%percentage%%"
+
+format-muted= "<label-muted>"
+label-muted = ""
+label-muted-foreground = #ff8080
+label-muted-padding = 1
+
+[module/vpn]
+type = custom/script
+exec = ~/.config/polybar/vpn.sh
+interval = 30
+format-prefix = " "
+format-prefix-foreground = #8abeb7
+format-padding = 1
+
 [module/wlan]
 type = internal/network
 interface = ${env:WLAN}
@@ -146,10 +196,10 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = " %Y-%m-%d"
+date-alt = " %d/%m"
 
 time = %H:%M
-time-alt = %H:%M:%S
+time-alt = %H:%M
 
 format-prefix = 
 format-prefix-foreground = #8abeb7
@@ -182,37 +232,21 @@ ramp-capacity-foreground = #8abeb7
 type = custom/menu
 
 expand-right = true
+format-background = #8abeb7
+format-foreground = #1f1f1f
 
 format-padding = 1
 
 label-open = 
-label-open-foreground = #8abeb7
-label-close =  cancel
-label-close-foreground = #8abeb7
-label-separator = |
-label-separator-foreground = #8abeb7
+label-close =  cancel
+label-separator = "  "
 
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-menu-0-2 = log off
-menu-0-2-exec = menu-open-3
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = reboot
-
-menu-2-0 = power off
-menu-2-0-exec = poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
-
-menu-3-0 = log off
-menu-3-0-exec = pkill -KILL -u $USER
-menu-3-1 = cancel
-menu-3-1-exec = menu-open-0
+menu-0-0 =  reboot
+menu-0-0-exec = reboot
+menu-0-1 =  power off
+menu-0-1-exec = poweroff
+menu-0-2 =  log off
+menu-0-2-exec = pkill -KILL -u $USER
 
 [settings]
 screenchange-reload = true
