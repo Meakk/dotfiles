@@ -24,6 +24,15 @@ bindsym $mod+l exec ~/.config/i3/lock.sh
 # Print screen
 bindsym --release Print exec scrot -s $HOME/Documents/Screenshot_`date +%Y%m%d_%H%M%S`.png
 
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 2 toggle # mute sound
+
+# Brightness controls
+bindsym XF86MonBrightnessUp exec light -A 10
+bindsym XF86MonBrightnessDown exec light -U 10
+
 # Window kill command
 bindsym $mod+Shift+q kill
 
