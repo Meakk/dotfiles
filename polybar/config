@@ -6,7 +6,7 @@ height = 22
 radius = 0
 fixed-center = false
 
-background = #a01f1f1f
+background = #1f1f1f
 foreground = #c6c6c6
 
 line-size = 3
@@ -15,8 +15,8 @@ line-color =
 border-size = 0
 border-color =
 
-padding-left = 1
-padding-right = 1
+padding-left = 0
+padding-right = 0
 
 module-margin-left = 0
 module-margin-right = 0
@@ -155,21 +155,24 @@ label-muted-foreground = #ff8080
 label-muted-padding = 1
 
 [module/vpn]
-type = custom/script
-exec = ~/.config/polybar/vpn.sh
-interval = 30
-format-prefix = " "
-format-prefix-foreground = #8abeb7
-format-padding = 1
+type = internal/network
+interface = ${env:VPN}
+interval = 3
+
+format-connected = ""
+format-connected-foreground = #ff8080
+
+format-disconnected =
 
 [module/wlan]
 type = internal/network
 interface = ${env:WLAN}
-interval = 3.0
+interval = 3
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-padding = 1
 label-connected = %local_ip% (%essid%)
+
 format-disconnected =
 
 ramp-signal-0 = 
@@ -182,7 +185,7 @@ ramp-signal-foreground = #8abeb7
 [module/eth]
 type = internal/network
 interface = ${env:ETH}
-interval = 3.0
+interval = 3
 
 format-connected-padding = 1
 format-connected-prefix = " "
