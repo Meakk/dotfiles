@@ -22,7 +22,7 @@ bindsym $mod+i exec notify-send "Notification" "Test content"
 bindsym $mod+l exec ~/.config/i3/lock.sh
 
 # Print screen
-bindsym --release Print exec scrot -s $HOME/Documents/Screenshot_`date +%Y%m%d_%H%M%S`.png
+# bindsym --release Print exec scrot -s $HOME/Documents/Screenshot_`date +%Y%m%d_%H%M%S`.png
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 +5% #increase sound volume
@@ -37,7 +37,9 @@ bindsym XF86MonBrightnessDown exec light -U 10
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id rofi -show drun -display-drun apps -theme themes/drun.rasi
+bindsym $mod+0 exec sh $HOME/.config/rofi/scripts/powermenu.sh
+bindsym Print exec sh $HOME/.config/rofi/scripts/scrot.sh
 
 # change focus
 bindsym $mod+Left focus left
@@ -169,9 +171,9 @@ exec_always --no-startup-id numlockx on
 exec_always --no-startup-id setxkbmap fr
 
 # Theme colors
-set $color #8abeb7
-set $text  #c6c6c6
-set $bg    #1f1f1f
+set_from_resource $color theme_highlight1 #8abeb7
+set_from_resource $text theme_foreground #c6c6c6
+set_from_resource $bg theme_background #1f1f1f
 
 # border / background / text / indicator / child_border
 client.focused $color $color $bg $color $color

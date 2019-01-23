@@ -1,7 +1,14 @@
-rofi.show: run
-rofi.modi: window,ssh,run
-rofi.theme: ~/.config/rofi/carbo.rasi
-rofi.blur-background : true
+rofi.show-icons: true
+rofi.modi: drun
+rofi.blur-background: true
 rofi.fullscreen: true
-rofi.terminal:kitty
+rofi.terminal: kitty
 rofi.font: Roboto Medium 15
+rofi.cycle: true
+rofi.drun-icon-theme: Paper
+rofi.hide-scrollbar: true
+rofi.color-enabled:     true
+rofi.color-window:      #ff0000, #00ff00
+rofi.color-normal:      argb:00333333, #ffffff, argb:00333333, argb:00333333, argb:ffefa211
+rofi.color-urgent:      argb:00333333, #ffffff, argb:00333333, argb:00333333, argb:ffefa211
+rofi.color-active:      argb:00333333, #ffffff, argb:00333333, argb:00333333, argb:ffefa211

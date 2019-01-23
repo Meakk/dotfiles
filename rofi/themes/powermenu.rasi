@@ -1,0 +1,39 @@
+* {
+    main-color:       #728cbb;
+    background:       #1c1c1c;
+    background-alt:   #1f1f1f;
+    background-light: #282828;
+    foreground:       #e2e2e2;
+    /* Base values for all */
+    background-color: @background;
+    text-color:       @foreground;
+}
+window {
+    padding: 40% 35%;
+}
+/* Input window */
+inputbar {
+    children: [];
+}
+listview {
+    fixed-height: true;
+    columns: 4;
+    lines: 1;
+    spacing: 10px;
+}
+
+/* List of entries top right bottom left */
+element {
+    font: "Font Awesome 5 Free 50";
+    padding: 18px 0px 0px 35px;
+    border: 0px 0px 8px 0px;
+}
+element.normal {
+    background-color: @background-alt;
+    border-color: @background-alt;
+}
+element.selected {
+    background-color: @background-light;
+    text-color: @main-color;
+    border-color: @main-color;
+}
