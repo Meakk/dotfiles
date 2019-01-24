@@ -2,9 +2,9 @@
 
 pkill polybar
 
-eth=$(ip link show | grep enp | sed -E "s/.*(enp.*):.*/\1/g" | head -n 1)
-wlan=$(ip link show | grep wlp | sed -E "s/.*(wlp.*):.*/\1/g" | head -n 1)
-vpn=$(ip link show | grep tun | sed -E "s/.*(tun.*):.*/\1/g" | head -n 1)
+eth=$(nmcli dev status | grep ethernet | head -n 1 | cut -d ' ' -f 1)
+wlan=$(nmcli dev status | grep wifi | head -n 1 | cut -d ' ' -f 1)
+vpn=$(nmcli dev status | grep tun | head -n 1 | cut -d ' ' -f 1)
 
 lines=$(polybar -m | sed -e 's/:.*$//g')
 for mon in $lines
