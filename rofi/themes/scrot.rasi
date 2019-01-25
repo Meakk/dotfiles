@@ -11,7 +11,7 @@
 }
 
 window {
-    padding: 430px 500px;
+    padding: 440px 640px;
     children: [listview];
 }
 
@@ -25,8 +25,8 @@ listview {
 
 /* List of entries top right bottom left */
 element {
-    font: "Font Awesome 5 Free 115";
-    padding: 10px 0px 0px -150px;
+    font: "Font Awesome 5 Free 80";
+    padding: 46px 0px 20px -105px;
     border: 0px 0px 8px 0px;
     background-color: ${SCROTBG};
 }

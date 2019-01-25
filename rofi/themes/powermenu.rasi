@@ -1,39 +1,43 @@
 * {
-    main-color:       #728cbb;
-    background:       #1c1c1c;
-    background-alt:   #1f1f1f;
-    background-light: #282828;
-    foreground:       #e2e2e2;
+    main-color:       ${PMHL};
+    background:       ${PMBG};
+    background-alt:   ${PMBG2};
+    background-light: ${PMHL2};
+    foreground:       ${PMFG};
+    urgent:           ${PMUR};
     /* Base values for all */
-    background-color: @background;
     text-color:       @foreground;
+    background-color: #000000;
 }
+
 window {
-    padding: 40% 35%;
+    padding: 440px 530px;
+    children: [listview];
 }
-/* Input window */
-inputbar {
-    children: [];
-}
+
 listview {
-    fixed-height: true;
+    spacing: 20px;
     columns: 4;
     lines: 1;
-    spacing: 10px;
+    orientation: horizontal;
+    fixed-height: true;
 }
 
 /* List of entries top right bottom left */
 element {
-    font: "Font Awesome 5 Free 50";
-    padding: 18px 0px 0px 35px;
+    font: "Font Awesome 5 Free 80";
+    padding: 46px 0px 20px -105px;
     border: 0px 0px 8px 0px;
+    background-color: ${PMBG};
 }
+
 element.normal {
-    background-color: @background-alt;
-    border-color: @background-alt;
-}
-element.selected {
-    background-color: @background-light;
     text-color: @main-color;
     border-color: @main-color;
+}
+
+element.selected {
+    background-color: ${PMBG2};
+    text-color: @foreground;
+    border-color: @urgent;
 }

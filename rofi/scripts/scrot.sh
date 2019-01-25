@@ -1,18 +1,11 @@
 #!/bin/bash
 
-export SCROTBG="$(xrdb -query | grep "*theme_background" | head -n 1 | cut -f 2)"
-export SCROTBG2="$(xrdb -query | grep "*theme_background_light" | cut -f 2)"
-export SCROTFG="$(xrdb -query | grep "*theme_foreground" | cut -f 2)"
-export SCROTHL="$(xrdb -query | grep "*theme_highlight1" | cut -f 2)"
-export SCROTHL2="$(xrdb -query | grep "*theme_highlight2" | cut -f 2)"
-export SCROTUR="$(xrdb -query | grep "*theme_urgent" | cut -f 2)"
-
-echo $SCROTBG
-echo $SCROTBG2
-echo $SCROTFG
-echo $SCROTHL
-echo $SCROTHL2
-echo $SCROTUR
+export SCROTBG="$(xrdb -query | grep "*theme_bg1" | cut -f 2)"
+export SCROTBG2="$(xrdb -query | grep "*theme_bg2" | cut -f 2)"
+export SCROTFG="$(xrdb -query | grep "*theme_fg" | cut -f 2)"
+export SCROTHL="$(xrdb -query | grep "*theme_hl1" | cut -f 2)"
+export SCROTHL2="$(xrdb -query | grep "*theme_hl2" | cut -f 2)"
+export SCROTUR="$(xrdb -query | grep "*theme_ug" | cut -f 2)"
 
 rofi_command="rofi -theme ~/.config/rofi/themes/scrot.rasi"
 # Each of the icon is a selectable element

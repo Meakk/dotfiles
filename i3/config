@@ -148,8 +148,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Resize window (you can also use the mouse for that)
-bindsym $mod+r mode "resize"
-mode "resize" {
+bindsym $mod+r mode "Resize"
+mode "Resize" {
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 2 px or 2 ppt
         bindsym Down resize grow height 2 px or 2 ppt
@@ -171,9 +171,9 @@ exec_always --no-startup-id numlockx on
 exec_always --no-startup-id setxkbmap fr
 
 # Theme colors
-set_from_resource $color theme_highlight1 #8abeb7
-set_from_resource $text theme_foreground #c6c6c6
-set_from_resource $bg theme_background #1f1f1f
+set_from_resource $color theme_hl1 #8abeb7
+set_from_resource $text theme_fg #c6c6c6
+set_from_resource $bg theme_bg #1f1f1f
 
 # border / background / text / indicator / child_border
 client.focused $color $color $bg $color $color
@@ -193,7 +193,7 @@ smart_gaps on
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
+bindsym $mod+g mode "$mode_gaps"
 
 mode "$mode_gaps" {
         bindsym o      mode "$mode_gaps_outer"

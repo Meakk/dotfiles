@@ -1,5 +1,12 @@
 #!/bin/bash
 
+export PMBG="$(xrdb -query | grep "*theme_bg1" | cut -f 2)"
+export PMBG2="$(xrdb -query | grep "*theme_bg2" | cut -f 2)"
+export PMFG="$(xrdb -query | grep "*theme_fg" | cut -f 2)"
+export PMHL="$(xrdb -query | grep "*theme_hl1" | cut -f 2)"
+export PMHL2="$(xrdb -query | grep "*theme_hl2" | cut -f 2)"
+export PMUR="$(xrdb -query | grep "*theme_ug" | cut -f 2)"
+
 rofi_command="rofi -theme themes/powermenu.rasi"
 
 # Each of the icon is a selectable element
