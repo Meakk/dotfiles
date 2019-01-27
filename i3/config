@@ -37,9 +37,9 @@ bindsym XF86MonBrightnessDown exec light -U 10
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id rofi -show drun -display-drun apps -theme themes/drun.rasi
-bindsym $mod+0 exec sh $HOME/.config/rofi/scripts/powermenu.sh
-bindsym Print exec sh $HOME/.config/rofi/scripts/scrot.sh
+bindsym $mod+d exec $HOME/.config/rofi/scripts/drun.sh
+bindsym $mod+0 exec $HOME/.config/rofi/scripts/powermenu.sh
+bindsym Print exec $HOME/.config/rofi/scripts/scrot.sh
 
 # change focus
 bindsym $mod+Left focus left

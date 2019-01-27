@@ -1,9 +1,9 @@
 * {
-    main-color:       #728cbb;
+    main-color:       ${DRUNHL};
     background:       #1c1c1c;
     background-alt:   #1f1f1f;
     background-light: #282828;
-    foreground:       #e2e2e2;
+    foreground:       ${DRUNFG};
     /* Base values for all */
     background-color: @background;
     text-color:       @foreground;

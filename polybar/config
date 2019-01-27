@@ -52,7 +52,7 @@ content = 
 content-padding = 1
 content-background = ${xrdb:theme_fg:#8abeb7}
 content-foreground = ${xrdb:theme_bg1:#1f1f1f}
-click-left = rofi -show run
+click-left = $HOME/.config/rofi/scripts/drun.sh
 
 [module/updates-arch-combined]
 type = custom/script
