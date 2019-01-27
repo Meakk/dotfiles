@@ -18,10 +18,10 @@ case $chosen in
         sleep 0.3; ~/.config/i3/lock.sh
         ;;
     ) # Shutdown the computer
-        systemctl poweroff
+        poweroff
         ;;
     ) # Reboot the computer
-        systemctl reboot
+        reboot
         ;;
     ) # Log out of the current session
         i3-msg exit

@@ -184,7 +184,7 @@ client.placeholder $bg $bg $text $color $color
 client.background $bg
 
 # Gaps
-gaps inner 5
+gaps inner 20
 gaps outer 2
 
 smart_gaps on
