@@ -138,9 +138,6 @@ for_window [title="Light Viewer"] floating enable
 
 for_window [class="^.*"] border pixel 4
 
-# switch to workspace with urgent window automatically
-for_window [urgent=latest] focus
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
@@ -173,10 +170,10 @@ exec_always --no-startup-id setxkbmap fr
 # Theme colors
 set_from_resource $color theme_hl1 #8abeb7
 set_from_resource $text theme_fg #c6c6c6
-set_from_resource $bg theme_bg #1f1f1f
+set_from_resource $bg theme_bg1 #1f1f1f
 
 # border / background / text / indicator / child_border
-client.focused $color $color $bg $color $color
+client.focused $color $color $fg $color $color
 client.focused_inactive $bg $bg $text $bg $bg
 client.unfocused $bg $bg $text $bg $bg
 client.urgent $bg $bg $text $color $color

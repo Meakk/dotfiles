@@ -86,18 +86,20 @@ label-mode-background = ${xrdb:theme_fg:#1f1f1f}
 
 label-focused = "%name%"
 label-focused-font = 3
-label-focused-foreground = ${xrdb:theme_hl1:#8abeb7}
+label-focused-foreground = ${xrdb:theme_fg:#8abeb7}
 label-focused-underline-size = 3
-label-focused-underline = ${xrdb:theme_hl1:#8abeb7}
+label-focused-underline = ${xrdb:theme_fg:#8abeb7}
 label-focused-padding = 2
 
 label-unfocused = %name%
 label-unfocused-font = 3
 label-unfocused-padding = 2
+label-unfocused-foreground = ${xrdb:theme_hl1:#8abeb7}
 
 label-visible = %name%
 label-visible-font = 3
 label-visible-padding = 2
+label-visible-foreground = ${xrdb:theme_hl1:#8abeb7}
 
 label-urgent = %name%
 label-urgent-font = 3
