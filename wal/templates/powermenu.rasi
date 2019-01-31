@@ -1,6 +1,6 @@
 * {{
-    background:       #1c1c1c;
-    background-light: #282828;
+    background:       {color0};
+    background-light: {color8};
     foreground:       {foreground};
     urgent:           {color1};
     /* Base values for all */

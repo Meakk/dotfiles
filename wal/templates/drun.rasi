@@ -1,7 +1,7 @@
 * {{
-    main-color:       {color1};
-    background:       #1c1c1c;
-    background-light: #282828;
+    urgent:           {color1};
+    background:       {color0};
+    background-light: {color8};
     foreground:       {foreground};
     /* Base values for all */
     background-color: @background;
@@ -23,7 +23,7 @@ inputbar {{
 }}
 prompt {{
     padding: 10px 20px;
-    background-color: @main-color;
+    background-color: @urgent;
     text-color: @background;
 }}
 textbox-prompt-colon {{
@@ -32,7 +32,7 @@ textbox-prompt-colon {{
     padding: 10px;
 }}
 entry {{
-    text-color: @main-color;
+    text-color: @urgent;
     padding: 10px 10px 10px 0px;
 }}
 /* List of entries */
@@ -47,6 +47,6 @@ element.normal {{
 }}
 element.selected {{
     background-color: @background-light;
-    text-color: @main-color;
-    border-color: @main-color;
+    text-color: @urgent;
+    border-color: @urgent;
 }}
