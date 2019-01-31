@@ -1,0 +1,13 @@
+#header {{
+  display: none !important;
+}}
+
+#switch > button {{
+  fill: {color4} !important;
+  background-color: {color0} !important;
+}}
+
+.button-tabbar {{
+  fill: {color4} !important;
+  background-color: {color8} !important;
+}}

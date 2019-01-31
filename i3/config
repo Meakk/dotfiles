@@ -163,6 +163,7 @@ exec_always --no-startup-id pkill dunst; dunst -conf ~/.cache/wal/dunstrc &
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id numlockx on
 exec_always --no-startup-id setxkbmap fr
+exec_always --no-startup-id wal -R -e
 
 # Theme colors
 set_from_resource $color color6 #8abeb7
