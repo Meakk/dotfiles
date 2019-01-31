@@ -7,7 +7,7 @@ export SCROTHL="$(xrdb -query | grep "*theme_hl1" | cut -f 2)"
 export SCROTHL2="$(xrdb -query | grep "*theme_hl2" | cut -f 2)"
 export SCROTUR="$(xrdb -query | grep "*theme_ug" | cut -f 2)"
 
-rofi_command="rofi -theme ~/.config/rofi/themes/scrot.rasi"
+rofi_command="rofi -theme ~/.cache/wal/scrot.rasi"
 # Each of the icon is a selectable element
 options=$'\n\n'
 

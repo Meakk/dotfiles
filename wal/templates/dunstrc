@@ -31,7 +31,7 @@ plain_text = no
 #   %I  iconname (without its path)
 #   %p  progress value if set ([  0%] to [100%]) or nothing
 # Markup is allowed
-format = "<span font='12' color='#8abeb7' font_weight='bold'>%s</span>\n%b"
+format = "<span font='12' color='{color4}' font_weight='bold'>%s</span>\n%b"
 
 # Sort messages by urgency.
 sort = no
@@ -65,9 +65,6 @@ ignore_newline = no
 stack_duplicates = yes
 hide_duplicates_count = yes
 
-
-# The geometry of the window:
-#   [{width}]x{height}[+/-{x}+/-{y}]
 # The geometry of the message window.
 # The height is measured in number of notifications everything else
 # in pixels.  If the width is omitted but the height is given
@@ -171,7 +168,6 @@ max_icon_size = 50
 icon_path = /usr/share/icons/breeze-dark/16x16/mimetypes/:/usr/share/icons/breeze-dark/48x48/status/:/usr/share/icons/breeze-dark/16x16/devices/:/usr/share/icons/breeze-dark/48x48/notifications/:/usr/share/icons/breeze-dark/48x48/emblems/:/usr/share/icons/breeze-dark/apps/scalable
 
 frame_width = 3
-#frame_color = "#FF0000"
 
 [shortcuts]
 
@@ -192,21 +188,21 @@ context = ctrl+shift+period
 [urgency_low]
 # IMPORTANT: colors have to be defined in quotation marks.
 # Otherwise the "#" and following would be interpreted as a comment.
-frame_color = "#ff8080"
-foreground  = "#c6c6c6"
-background  = "#1f1f1f"
+frame_color = "{color1}"
+foreground  = "{foreground}"
+background  = "{background}"
 timeout     = 4
 
 [urgency_normal]
-frame_color = "#ff8080"
-foreground  = "#c6c6c6"
-background  = "#1f1f1f"
+frame_color = "{color1}"
+foreground  = "{foreground}"
+background  = "{background}"
 timeout     = 6
 
 [urgency_critical]
-frame_color = "#ff8080"
-foreground  = "#c6c6c6"
-background  = "#1f1f1f"
+frame_color = "{color1}"
+foreground  = "{foreground}"
+background  = "{background}"
 timeout     = 8
 
 

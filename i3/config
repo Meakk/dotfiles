@@ -19,10 +19,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+i exec notify-send "Notification" "Test content"
 
 # Lock screen
-bindsym $mod+l exec ~/.config/i3/lock.sh
-
-# Print screen
-# bindsym --release Print exec scrot -s $HOME/Documents/Screenshot_`date +%Y%m%d_%H%M%S`.png
+bindsym $mod+l exec bash ~/.cache/wal/lock.sh
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 +5% #increase sound volume
@@ -162,15 +159,15 @@ mode "Resize" {
 exec_always --no-startup-id nitrogen --restore
 #exec --no-startup-id ~/.config/conky/startup.sh
 exec_always --no-startup-id pkill compton; compton -b
-exec_always --no-startup-id dunst &
+exec_always --no-startup-id pkill dunst; dunst -conf ~/.cache/wal/dunstrc &
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id numlockx on
 exec_always --no-startup-id setxkbmap fr
 
 # Theme colors
-set_from_resource $color theme_hl1 #8abeb7
-set_from_resource $text theme_fg #c6c6c6
-set_from_resource $bg theme_bg1 #1f1f1f
+set_from_resource $color color6 #8abeb7
+set_from_resource $text foreground #c6c6c6
+set_from_resource $bg background #1f1f1f
 
 # border / background / text / indicator / child_border
 client.focused $color $color $fg $color $color
@@ -181,7 +178,7 @@ client.placeholder $bg $bg $text $color $color
 client.background $bg
 
 # Gaps
-gaps inner 20
+gaps inner 15
 gaps outer 2
 
 smart_gaps on

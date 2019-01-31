@@ -1,0 +1,41 @@
+* {{
+    background:       #1c1c1c;
+    background-light: #282828;
+    foreground:       {foreground};
+    urgent:           {color1};
+    /* Base values for all */
+    text-color:       @foreground;
+    background-color: @background;
+}}
+
+window {{
+    padding: 440px 530px;
+    children: [listview];
+}}
+
+listview {{
+    spacing: 20px;
+    columns: 4;
+    lines: 1;
+    orientation: horizontal;
+    fixed-height: true;
+}}
+
+/* List of entries top right bottom left */
+element {{
+    font: "Font Awesome 5 Free 80";
+    padding: 46px 0px 20px -105px;
+    border: 0px 0px 8px 0px;
+    background-color: @background;
+}}
+
+element.normal {{
+    text-color: @foreground;
+    border-color: @background;
+}}
+
+element.selected {{
+    background-color: @background-light;
+    text-color: @urgent;
+    border-color: @urgent;
+}}

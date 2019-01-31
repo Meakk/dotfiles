@@ -6,8 +6,8 @@ height = 22
 radius = 0
 fixed-center = false
 
-background = ${xrdb:theme_bg1:#1f1f1f}
-foreground = ${xrdb:theme_fg:#c6c6c6}
+background = ${xrdb:background:#1f1f1f}
+foreground = ${xrdb:foreground:#c6c6c6}
 
 line-size = 3
 line-color =
@@ -23,7 +23,7 @@ module-margin-right = 0
 
 font-0 = "font\-logos:size=12;3"
 font-1 = "Roboto:size=9:weight=medium;2"
-font-2 = "Font Awesome 5 Free:style=Solid:size=10;3"
+font-2 = "Font Awesome 5 Free:style=Solid:size=10;1"
 font-3 = "Font Awesome 5 Brands:size=8;2"
 font-4 = "Material Icons:size=12;3"
 font-5 = "DejaVu Sans:size=9;2"
@@ -43,15 +43,15 @@ type = custom/script
 exec = ~/.config/polybar/gmail/launch.py
 interval = 60
 format-prefix = " "
-format-prefix-foreground = ${xrdb:theme_hl1:#8abeb7}
+format-prefix-foreground = ${xrdb:color4:#8abeb7}
 format-padding = 1
 
 [module/arch]
 type = custom/text
 content = 
 content-padding = 1
-content-background = ${xrdb:theme_fg:#8abeb7}
-content-foreground = ${xrdb:theme_bg1:#1f1f1f}
+content-background = ${xrdb:foreground:#8abeb7}
+content-foreground = ${xrdb:background:#1f1f1f}
 click-left = $HOME/.config/rofi/scripts/drun.sh
 
 [module/updates-arch-combined]
@@ -59,7 +59,7 @@ type = custom/script
 exec = ~/.config/polybar/updates-arch-combined.sh
 interval = 600
 format-prefix = " "
-format-prefix-foreground = ${xrdb:theme_hl1:#8abeb7}
+format-prefix-foreground = ${xrdb:color4:#8abeb7}
 format-padding = 1
 
 [module/available-space]
@@ -69,7 +69,7 @@ interval = 10
 format-mounted = <label-mounted>
 label-mounted = %free%
 format-mounted-prefix = " "
-format-mounted-prefix-foreground = ${xrdb:theme_hl1:#8abeb7}
+format-mounted-prefix-foreground = ${xrdb:color4:#8abeb7}
 format-mounted-padding = 1
 
 [module/i3]
@@ -81,30 +81,30 @@ wrapping-scroll = false
 format-padding = 1
 
 label-mode-padding = 8
-label-mode-foreground = ${xrdb:theme_ug:#8abeb7}
-label-mode-background = ${xrdb:theme_fg:#1f1f1f}
+label-mode-foreground = ${xrdb:color1:#8abeb7}
+label-mode-background = ${xrdb:foreground:#1f1f1f}
 
 label-focused = "%name%"
 label-focused-font = 3
-label-focused-foreground = ${xrdb:theme_fg:#8abeb7}
+label-focused-foreground = ${xrdb:foreground:#8abeb7}
 label-focused-underline-size = 3
-label-focused-underline = ${xrdb:theme_fg:#8abeb7}
+label-focused-underline = ${xrdb:foreground:#8abeb7}
 label-focused-padding = 2
 
 label-unfocused = %name%
 label-unfocused-font = 3
 label-unfocused-padding = 2
-label-unfocused-foreground = ${xrdb:theme_hl1:#8abeb7}
+label-unfocused-foreground = ${xrdb:color4:#8abeb7}
 
 label-visible = %name%
 label-visible-font = 3
 label-visible-padding = 2
-label-visible-foreground = ${xrdb:theme_hl1:#8abeb7}
+label-visible-foreground = ${xrdb:color4:#8abeb7}
 
 label-urgent = %name%
 label-urgent-font = 3
-label-urgent-background = ${xrdb:theme_ug:#c6c6c6}
-label-urgent-foreground = ${xrdb:theme_fg:#c6c6c6}
+label-urgent-background = ${xrdb:color1:#c6c6c6}
+label-urgent-foreground = ${xrdb:foreground:#c6c6c6}
 label-urgent-padding = 2
 
 [module/title]
@@ -114,27 +114,27 @@ format-padding = 2
 
 label = %title%
 label-maxlen = 50
-label-foreground = ${xrdb:theme_fg:#8abeb7}
+label-foreground = ${xrdb:foreground:#8abeb7}
 
 [module/slope1]
 type = custom/text
 content = "%{T7}◣%{T-}"
-content-foreground = ${xrdb:theme_fg:#8abeb7}
+content-foreground = ${xrdb:foreground:#8abeb7}
 
 [module/slope2]
 type = custom/text
 content = "%{T7}◤%{T-}"
-content-foreground = ${xrdb:theme_fg:#8abeb7}
+content-foreground = ${xrdb:foreground:#8abeb7}
 
 [module/slope3]
 type = custom/text
 content = "%{T7}◥%{T-}"
-content-foreground = ${xrdb:theme_fg:#8abeb7}
+content-foreground = ${xrdb:foreground:#8abeb7}
 
 [module/slope4]
 type = custom/text
 content = "%{T7}◢%{T-}"
-content-foreground = ${xrdb:theme_fg:#8abeb7}
+content-foreground = ${xrdb:foreground:#8abeb7}
 
 [module/volume]
 type = internal/volume
@@ -144,13 +144,13 @@ format-volume = <ramp-volume> <label-volume>
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
-ramp-volume-foreground = ${xrdb:theme_hl1:#8abeb7}
+ramp-volume-foreground = ${xrdb:color4:#8abeb7}
 
 label-volume = "%percentage%%"
 
 format-muted= "<label-muted>"
 label-muted = ""
-label-muted-foreground = ${xrdb:theme_ug:#ff8080}
+label-muted-foreground = ${xrdb:color1:#ff8080}
 label-muted-padding = 1
 
 [module/vpn]
@@ -159,7 +159,7 @@ interface = ${env:VPN}
 interval = 3
 
 format-connected = ""
-format-connected-foreground = ${xrdb:theme_ug:#ff8080}
+format-connected-foreground = ${xrdb:color1:#ff8080}
 
 format-disconnected =
 
@@ -179,7 +179,7 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${xrdb:theme_hl1:#8abeb7}
+ramp-signal-foreground = ${xrdb:color4:#8abeb7}
 
 [module/eth]
 type = internal/network
@@ -188,7 +188,7 @@ interval = 3
 
 format-connected-padding = 1
 format-connected-prefix = " "
-format-connected-prefix-foreground = ${xrdb:theme_hl1:#8abeb7}
+format-connected-prefix-foreground = ${xrdb:color4:#8abeb7}
 label-connected = %local_ip%
 
 format-disconnected =
@@ -204,7 +204,7 @@ time = %H:%M
 time-alt = %H:%M
 
 format-prefix = 
-format-prefix-foreground = ${xrdb:theme_hl1:#8abeb7}
+format-prefix-foreground = ${xrdb:color4:#8abeb7}
 format-padding = 1
 
 label = %date% %time%
@@ -228,27 +228,31 @@ ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
-ramp-capacity-foreground = ${xrdb:theme_hl1:#8abeb7}
+ramp-capacity-foreground = ${xrdb:color4:#8abeb7}
 
 [module/powermenu]
 type = custom/menu
 
 expand-right = true
-format-background = ${xrdb:theme_fg:#8abeb7}
-format-foreground = ${xrdb:theme_bg1:#1f1f1f}
+format-background = ${xrdb:foreground:#8abeb7}
+format-foreground = ${xrdb:background:#1f1f1f}
 
 format-padding = 1
 
 label-open = 
 label-close =  cancel
 label-separator = "  "
+label-separator-foreground = ${xrdb:background:#1f1f1f}
 
 menu-0-0 =  reboot
+menu-0-0-foreground = ${xrdb:color1:#8abeb7}
 menu-0-0-exec = reboot
 menu-0-1 =  power off
+menu-0-1-foreground = ${xrdb:color1:#8abeb7}
 menu-0-1-exec = poweroff
 menu-0-2 =  log off
 menu-0-2-exec = pkill -KILL -u $USER
+menu-0-2-foreground = ${xrdb:color1:#8abeb7}
 
 [settings]
 screenchange-reload = true
