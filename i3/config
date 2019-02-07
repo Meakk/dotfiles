@@ -12,7 +12,7 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # Send fake notification
-bindsym $mod+i exec notify-send "Notification" "Test content"
+bindsym $mod+i exec --no-startup-id notify-send "Notification" "Test content"
 
 # Lock screen
 bindsym $mod+l exec bash ~/.cache/wal/lock.sh
@@ -153,6 +153,7 @@ mode "Resize" {
 }
 
 # Autostart applications
+exec_always --no-startup-id wal -R -e
 exec_always --no-startup-id nitrogen --restore
 #exec --no-startup-id ~/.config/conky/startup.sh
 exec_always --no-startup-id pkill compton; compton -b
