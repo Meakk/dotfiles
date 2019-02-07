@@ -5,10 +5,6 @@ new_float pixel 5
 
 hide_edge_borders smart
 
-bindsym $mod+u border none
-bindsym $mod+y border pixel 1
-bindsym $mod+n border normal
-
 font xft:Roboto 11
 
 floating_modifier $mod
@@ -88,16 +84,16 @@ bindsym $mod+Shift+k move scratchpad
 bindsym $mod+k scratchpad show
 
 # navigate workspaces next / previous
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
 
 # workspaces
-set $ws1 
-set $ws2 
-set $ws3 
-set $ws4 
-set $ws5 
-set $ws6 
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -128,12 +124,13 @@ for_window [class="qt5ct"] floating enable
 for_window [class="Skype"] floating enable
 for_window [class="(?i)virtualbox"] floating enable
 for_window [class="^Steam.*"] floating enable
+for_window [class="feh"] floating enable
 
 # Dev
 for_window [class="^ParaView.*"] floating enable
 for_window [title="Light Viewer"] floating enable
 
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 2
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -163,23 +160,23 @@ exec_always --no-startup-id pkill dunst; dunst -conf ~/.cache/wal/dunstrc &
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id numlockx on
 exec_always --no-startup-id setxkbmap fr
-exec_always --no-startup-id wal -R -e
 
 # Theme colors
 set_from_resource $color color6 #8abeb7
 set_from_resource $text foreground #c6c6c6
 set_from_resource $bg background #1f1f1f
+set_from_resource $urgent color1 #ff0000
 
 # border / background / text / indicator / child_border
 client.focused $color $color $fg $color $color
 client.focused_inactive $bg $bg $text $bg $bg
 client.unfocused $bg $bg $text $bg $bg
-client.urgent $bg $bg $text $color $color
+client.urgent $bg $bg $text $urgent $urgent
 client.placeholder $bg $bg $text $color $color
 client.background $bg
 
 # Gaps
-gaps inner 15
+gaps inner 12
 gaps outer 2
 
 smart_gaps on

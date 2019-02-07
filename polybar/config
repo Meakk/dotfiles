@@ -73,10 +73,17 @@ format-mounted-prefix-foreground = ${xrdb:color4:#8abeb7}
 format-mounted-padding = 1
 
 [module/i3]
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+
 pin-workspaces = true
 type = internal/i3
 format = <label-state> <label-mode>
-index-sort = true
 wrapping-scroll = false
 format-padding = 1
 
@@ -84,27 +91,26 @@ label-mode-padding = 8
 label-mode-foreground = ${xrdb:color1:#8abeb7}
 label-mode-background = ${xrdb:foreground:#1f1f1f}
 
-label-focused = "%name%"
+label-focused = "%icon%"
 label-focused-font = 3
 label-focused-foreground = ${xrdb:foreground:#8abeb7}
 label-focused-underline-size = 3
 label-focused-underline = ${xrdb:foreground:#8abeb7}
 label-focused-padding = 2
 
-label-unfocused = %name%
+label-unfocused = %icon%
 label-unfocused-font = 3
 label-unfocused-padding = 2
-label-unfocused-foreground = ${xrdb:color4:#8abeb7}
+label-unfocused-foreground = ${xrdb:color8:#8abeb7}
 
-label-visible = %name%
+label-visible = %icon%
 label-visible-font = 3
 label-visible-padding = 2
-label-visible-foreground = ${xrdb:color4:#8abeb7}
+label-visible-foreground = ${xrdb:color8:#8abeb7}
 
-label-urgent = %name%
+label-urgent = %icon%
 label-urgent-font = 3
-label-urgent-background = ${xrdb:color1:#c6c6c6}
-label-urgent-foreground = ${xrdb:foreground:#c6c6c6}
+label-urgent-foreground = ${xrdb:color1:#c6c6c6}
 label-urgent-padding = 2
 
 [module/title]
