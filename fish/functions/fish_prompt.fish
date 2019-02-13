@@ -104,7 +104,7 @@ function fish_prompt
     set -l cwd (echo -s (set_color -o blue) (prompt_pwd))
     set -l connec (echo -s (set_color -o yellow) (whoami) '@' (hostname))
 
-    set -l header_left (echo -s '[' (date +'%H:%M') ']  ' $connec ' ' $cwd '  ' (_git_branch_name) (_git_prompt_dirty))
+    set -l header_left (echo -s $connec ' ' $cwd ' ' (_git_branch_name) (_git_prompt_dirty))
     set -l header_right (echo -s (_git_prompt_status) ' ' (_git_time_since_commit) ' ' (_git_commit_hash))
 
     set -l fill_spaces (math (tput cols) - (_length $header_right) - (_length $header_left))

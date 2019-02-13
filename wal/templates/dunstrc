@@ -76,14 +76,14 @@ hide_duplicates_count = yes
 # The width can be negative.  In this case the actual width is the
 # screen width minus the width defined in within the geometry option.
 #geometry = "250x50-40+40"
-geometry = "300x50-15+49"
+geometry = "400x300-10+30"
 
 # Define the corner radius of the notification window
 # in pixel size. If the radius is 0, you have no rounded
 # corners.
 # The radius will be automatically lowered if it exceeds half of the
 # notification height to avoid clipping text and/or icons.
-corner_radius=10
+corner_radius=0
 
 # Shrink window if it's smaller than the width.  Will be ignored if
 # width is 0.
@@ -204,7 +204,6 @@ frame_color = "{color1}"
 foreground  = "{foreground}"
 background  = "{background}"
 timeout     = 8
-
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.

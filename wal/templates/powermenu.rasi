@@ -26,7 +26,6 @@ element {{
     font: "Font Awesome 5 Free 80";
     padding: 46px 0px 20px -105px;
     border: 0px 0px 8px 0px;
-    background-color: @background;
 }}
 
 element.normal {{
