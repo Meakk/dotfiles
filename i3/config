@@ -46,6 +46,10 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# move workspace
+bindsym $mod+Ctrl+Left move workspace to output left
+bindsym $mod+Ctrl+Right move workspace to output right
+
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
 bindsym $mod+b workspace back_and_forth
@@ -177,8 +181,8 @@ client.placeholder $bg $bg $text $color $color
 client.background $bg
 
 # Gaps
-gaps inner 12
-gaps outer 2
+gaps inner 10
+gaps outer 0
 
 smart_gaps on
 

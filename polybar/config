@@ -1,4 +1,4 @@
-[bar/topbar]
+[bar/base]
 monitor = ${env:MONITOR}
 
 width = 100%
@@ -13,7 +13,7 @@ line-size = 3
 line-color =
 
 border-size = 0
-border-color =
+border-color = ${xrdb:foreground:#c6c6c6}
 
 padding-left = 0
 padding-right = 0
@@ -29,14 +29,29 @@ font-4 = "Material Icons:size=12;3"
 font-5 = "DejaVu Sans:size=9;2"
 font-6 = "DejaVu Sans:size=22:antialias=false;2"
 
-modules-left = slope2 slope4 arch slope2 updates-arch-combined i3
-modules-center = title
-modules-right = gmail available-space vpn eth wlan volume date battery slope3 powermenu slope1 slope3
-
 tray-position = none
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[bar/topbar]
+inherit = bar/base
+
+border-bottom-size = 1
+
+modules-left = slope2 slope4 arch slope2 updates-arch-combined i3
+modules-center = 
+modules-right = gmail available-space vpn eth wlan volume date battery slope3 powermenu slope1 slope3
+
+[bar/bottombar]
+inherit = bar/base
+
+border-top-size = 1
+
+modules-left =
+modules-center = i3
+modules-right =
+bottom = true
 
 [module/gmail]
 type = custom/script
@@ -161,7 +176,7 @@ label-muted-padding = 1
 
 [module/vpn]
 type = internal/network
-interface = ${env:VPN}
+interface = ${env:i3_polybar_tun}
 interval = 3
 
 format-connected = ""
@@ -171,7 +186,7 @@ format-disconnected =
 
 [module/wlan]
 type = internal/network
-interface = ${env:WLAN}
+interface = ${env:i3_polybar_wlan}
 interval = 3
 
 format-connected = <ramp-signal> <label-connected>
@@ -189,7 +204,7 @@ ramp-signal-foreground = ${xrdb:color4:#8abeb7}
 
 [module/eth]
 type = internal/network
-interface = ${env:ETH}
+interface = ${env:i3_polybar_eth}
 interval = 3
 
 format-connected-padding = 1
@@ -217,7 +232,7 @@ label = %date% %time%
 
 [module/battery]
 type = internal/battery
-battery = BAT0
+battery = ${env:i3_polybar_bat}
 adapter = AC
 
 label-discharging = %percentage%%
@@ -234,6 +249,7 @@ ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
+ramp-capacity-0-foreground = ${xrdb:color1:#8abeb7}
 ramp-capacity-foreground = ${xrdb:color4:#8abeb7}
 
 [module/powermenu]
@@ -253,10 +269,10 @@ label-separator-foreground = ${xrdb:background:#1f1f1f}
 menu-0-0 =  reboot
 menu-0-0-foreground = ${xrdb:color1:#8abeb7}
 menu-0-0-exec = reboot
-menu-0-1 =  power off
+menu-0-1 =  poweroff
 menu-0-1-foreground = ${xrdb:color1:#8abeb7}
 menu-0-1-exec = poweroff
-menu-0-2 =  log off
+menu-0-2 =  logoff
 menu-0-2-exec = pkill -KILL -u $USER
 menu-0-2-foreground = ${xrdb:color1:#8abeb7}
 
