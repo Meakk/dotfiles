@@ -1,5 +1,8 @@
 #! /bin/sh
 
+# Run this before setting the keyboard layout to avoid issues with numbers
+sxhkd &
+
 nitrogen --restore
 pkill compton; compton -b --blur-method kawase --blur-strength 8
 pkill dunst; dunst -conf ~/.cache/wal/dunstrc &
@@ -7,9 +10,7 @@ $HOME/.config/polybar/launch.sh
 numlockx on
 setxkbmap fr
 
-sxhkd &
-
-bspc monitor -d I II III IV V VI
+bspc monitor -d 1 2 3 4 5 6
 
 # colors
 source ~/.cache/wal/colors.sh

@@ -24,7 +24,7 @@ module-margin-right = 0
 font-0 = "font\-logos:size=12;3"
 font-1 = "Roboto:size=9:weight=medium;2"
 font-2 = "Font Awesome 5 Free:style=Solid:size=10;1"
-font-3 = "Font Awesome 5 Brands:size=8;2"
+font-3 = "Font Awesome 5 Brands:size=10;1"
 font-4 = "Material Icons:size=12;3"
 font-5 = "DejaVu Sans:size=9;2"
 font-6 = "DejaVu Sans:size=22:antialias=false;2"
@@ -96,12 +96,12 @@ format-mounted-padding = 1
 [module/bsp]
 type = internal/bspwm
 
-ws-icon-0 = I;
-ws-icon-1 = II;
-ws-icon-2 = III;
-ws-icon-3 = IV;
-ws-icon-4 = V;
-ws-icon-5 = VI;
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
 
 pin-workspaces = true
 
