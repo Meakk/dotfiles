@@ -157,9 +157,7 @@ mode "Resize" {
 }
 
 # Autostart applications
-exec_always --no-startup-id wal -R -e
 exec_always --no-startup-id nitrogen --restore
-#exec --no-startup-id ~/.config/conky/startup.sh
 exec_always --no-startup-id pkill compton; compton -b --blur-method kawase --blur-strength 8
 exec_always --no-startup-id pkill dunst; dunst -conf ~/.cache/wal/dunstrc &
 exec_always --no-startup-id ~/.config/polybar/launch.sh

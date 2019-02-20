@@ -39,7 +39,7 @@ inherit = bar/base
 
 border-bottom-size = 1
 
-modules-left = slope2 slope4 arch slope2 updates-arch-combined i3
+modules-left = slope2 slope4 arch slope2 updates-arch-combined bsp
 modules-center = 
 modules-right = gmail available-space vpn eth wlan volume date battery slope3 powermenu slope1 slope3
 
@@ -49,9 +49,14 @@ inherit = bar/base
 border-top-size = 1
 
 modules-left =
-modules-center = i3
+modules-center = close
 modules-right =
 bottom = true
+
+[module/close]
+type = custom/text
+content = 
+click-left = i3-msg kill
 
 [module/gmail]
 type = custom/script
@@ -73,8 +78,9 @@ click-left = $HOME/.config/rofi/scripts/drun.sh
 type = custom/script
 exec = ~/.config/polybar/updates-arch-combined.sh
 interval = 600
-format-prefix = " "
+format-prefix = 
 format-prefix-foreground = ${xrdb:color4:#8abeb7}
+format-prefix-padding-right = 1
 format-padding = 1
 
 [module/available-space]
@@ -87,7 +93,44 @@ format-mounted-prefix = " "
 format-mounted-prefix-foreground = ${xrdb:color4:#8abeb7}
 format-mounted-padding = 1
 
+[module/bsp]
+type = internal/bspwm
+
+ws-icon-0 = I;
+ws-icon-1 = II;
+ws-icon-2 = III;
+ws-icon-3 = IV;
+ws-icon-4 = V;
+ws-icon-5 = VI;
+
+pin-workspaces = true
+
+format = <label-state> <label-mode>
+
+label-focused = %icon%
+label-focused-font = 3
+label-focused-foreground = ${xrdb:color4:#8abeb7}
+label-focused-underline-size = 3
+label-focused-underline = ${xrdb:color4:#8abeb7}
+label-focused-padding = 2
+
+label-urgent = %icon%
+label-urgent-font = 3
+label-urgent-foreground = ${xrdb:color1:#c6c6c6}
+label-urgent-padding = 2
+
+label-occupied = %icon%
+label-occupied-font = 3
+label-occupied-padding = 2
+label-occupied-foreground = ${xrdb:color7:#8abeb7}
+
+label-empty = %icon%
+label-empty-font = 3
+label-empty-padding = 2
+label-empty-foreground = ${xrdb:color8:#8abeb7}
+
 [module/i3]
+type = internal/i3
 
 ws-icon-0 = 1;
 ws-icon-1 = 2;
@@ -97,7 +140,7 @@ ws-icon-4 = 5;
 ws-icon-5 = 6;
 
 pin-workspaces = true
-type = internal/i3
+
 format = <label-state> <label-mode>
 wrapping-scroll = false
 format-padding = 1
@@ -106,7 +149,7 @@ label-mode-padding = 8
 label-mode-foreground = ${xrdb:color1:#8abeb7}
 label-mode-background = ${xrdb:foreground:#1f1f1f}
 
-label-focused = "%icon%"
+label-focused = %icon%
 label-focused-font = 3
 label-focused-foreground = ${xrdb:foreground:#8abeb7}
 label-focused-underline-size = 3
@@ -158,7 +201,9 @@ content = "%{T7}◢%{T-}"
 content-foreground = ${xrdb:foreground:#8abeb7}
 
 [module/volume]
-type = internal/volume
+type = internal/pulseaudio
+
+use-ui-max = false
 
 format-volume = <ramp-volume> <label-volume>
 
@@ -169,14 +214,14 @@ ramp-volume-foreground = ${xrdb:color4:#8abeb7}
 
 label-volume = "%percentage%%"
 
-format-muted= "<label-muted>"
+format-muted= <label-muted>
 label-muted = ""
 label-muted-foreground = ${xrdb:color1:#ff8080}
 label-muted-padding = 1
 
 [module/vpn]
 type = internal/network
-interface = ${env:i3_polybar_tun}
+interface = ${env:polybar_tun}
 interval = 3
 
 format-connected = ""
@@ -186,7 +231,7 @@ format-disconnected =
 
 [module/wlan]
 type = internal/network
-interface = ${env:i3_polybar_wlan}
+interface = ${env:polybar_wlan}
 interval = 3
 
 format-connected = <ramp-signal> <label-connected>
@@ -204,11 +249,11 @@ ramp-signal-foreground = ${xrdb:color4:#8abeb7}
 
 [module/eth]
 type = internal/network
-interface = ${env:i3_polybar_eth}
+interface = ${env:polybar_eth}
 interval = 3
 
 format-connected-padding = 1
-format-connected-prefix = " "
+format-connected-prefix = " "
 format-connected-prefix-foreground = ${xrdb:color4:#8abeb7}
 label-connected = %local_ip%
 
@@ -232,7 +277,7 @@ label = %date% %time%
 
 [module/battery]
 type = internal/battery
-battery = ${env:i3_polybar_bat}
+battery = ${env:polybar_bat}
 adapter = AC
 
 label-discharging = %percentage%%

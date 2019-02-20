@@ -16,7 +16,7 @@ case $chosen in
         reboot
         ;;
     ) # Log out of the current session
-        i3-msg exit
+        bspc quit
         ;;
 esac
 

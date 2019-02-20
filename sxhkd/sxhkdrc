@@ -1,0 +1,84 @@
+#
+# wm independent hotkeys
+#
+
+# terminal emulator
+super + Return
+	kitty
+
+# notification test
+super + i
+	notify-send "Notification" "Test content"
+
+# lock
+super + l
+	sh $HOME/.cache/wal/lock.sh
+
+# volume
+{XF86AudioRaiseVolume,XF86AudioLowerVolume}
+	pactl set-sink-volume 2 {+,-}5%
+XF86AudioMute
+	pactl set-sink-mute 2 toggle
+
+# brightness
+{XF86MonBrightnessUp,XF86MonBrightnessDown}
+	light -{A,U} 10
+
+# program launcher / powermenu / scrot
+super + {d,0,Print}
+	$HOME/.config/rofi/scripts/{drun,powermenu,scrot}.sh
+
+# close and kill
+super + {_,shift + }q
+	bspc node -{c,k}
+
+
+# make sxhkd reload its configuration files:
+super + r
+	pkill -USR1 -x sxhkd
+
+#
+# bspwm hotkeys
+#
+
+# quit/restart bspwm
+super + shift + r
+	bspc wm -r
+
+
+# focus the node in the given direction
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9}
+	bspc {desktop -f,node -d} '^{1-9}'
+
+# move desktop
+super + ctrl + {Left,Right}
+	bspc desktop -m {prev, next} --follow
+
+
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
+# send the newest marked node to the newest preselected node
+super + y
+	bspc node newest.marked.local -n newest.!automatic.local
+
+# swap the current node and the biggest node
+super + g
+	bspc node -s biggest
+
+#
+# state/flags
+#
+
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# set the node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}

@@ -6,13 +6,16 @@ set -x QT_LOGGING_RULES "qt5ct.debug=false"
 set -x TERMINAL kitty
 set -x EDITOR vim
 
+# SXHKD fix
+set -x SXHKD_SHELL /usr/bin/bash
+
 # desktop configuration
-set -x i3_polybar_top true
-set -x i3_polybar_bottom false
-set -x i3_polybar_wlan wlp2s0
-set -x i3_polybar_eth eth0
-set -x i3_polybar_tun tun0
-set -x i3_polybar_bat BAT0
+set -x polybar_top true
+set -x polybar_bottom false
+set -x polybar_wlan wlan0
+set -x polybar_eth eth0
+set -x polybar_tun tun0
+set -x polybar_bat BAT0
 
 # fish colors
 set -x fish_color_command 8BE9FD --bold
