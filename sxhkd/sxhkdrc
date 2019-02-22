@@ -15,13 +15,13 @@ super + l
 	sh $HOME/.cache/wal/lock.sh
 
 # volume
-{XF86AudioRaiseVolume,XF86AudioLowerVolume}
+XF86Audio{Raise,Lower}Volume
 	pactl set-sink-volume 2 {+,-}5%
 XF86AudioMute
 	pactl set-sink-mute 2 toggle
 
 # brightness
-{XF86MonBrightnessUp,XF86MonBrightnessDown}
+XF86MonBrightness{Up,Down}
 	light -{A,U} 10
 
 # program launcher / powermenu / scrot
@@ -29,8 +29,8 @@ super + {d,0,Print}
 	$HOME/.config/rofi/scripts/{drun,powermenu,scrot}.sh
 
 # close and kill
-super + {_,shift + }a
-	bspc node -{c,k}
+super + {_,ctrl + ,shift + }a
+	bspc {node -c,desktop -r,node -k}
 
 # make sxhkd reload its configuration files:
 super + r
@@ -45,13 +45,12 @@ super + {_,shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus or send to the given desktop
-super + {_,shift + }{1-9}
-	bspc {desktop -f,node -d} {1-9}
+super + {_,ctrl + ,shift + }{1-9}
+	bspc {desktop -f,desktop -s,node -d} {1-9}
 
 # move desktop
 super + ctrl + {Left,Right}
 	bspc desktop -m {prev, next} --follow
-
 
 # send the newest marked node to the newest preselected node
 super + y
@@ -62,8 +61,8 @@ super + y
 #
 
 # set the window state
-super + {t,s,f}
-	bspc node -t {tiled,floating,fullscreen}
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
 super + ctrl + {h,j,k,l}
