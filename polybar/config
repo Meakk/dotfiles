@@ -51,15 +51,28 @@ inherit = bar/base
 
 border-top-size = 1
 
-modules-left =
-modules-center = close
-modules-right =
+modules-left = landscape portrait
+modules-center = 
+modules-right = close
 bottom = true
 
 [module/close]
 type = custom/text
 content = 
-click-left = i3-msg kill
+content-padding = 5
+click-left = bspc node -c
+
+[module/landscape]
+type = custom/text
+content = L
+content-padding = 5
+click-left = $HOME/.config/scripts/monitor_landscape.sh
+
+[module/portrait]
+type = custom/text
+content = P
+content-padding = 5
+click-left = $HOME/.config/scripts/monitor_portrait.sh
 
 [module/gmail]
 type = custom/script
@@ -113,24 +126,24 @@ format = <label-state> <label-mode>
 format-padding-left = 5
 format-padding-right = 2
 
-label-focused = "%icon% %{T8}%name%%{T-}"
+label-focused = "%icon% %{T8}%index%%{T-}"
 label-focused-font = 3
 label-focused-foreground = ${xrdb:color4:#8abeb7}
 label-focused-underline-size = 3
 label-focused-underline = ${xrdb:color4:#8abeb7}
 label-focused-padding = 2
 
-label-urgent = "%icon% %{T8}%name%%{T-}"
+label-urgent = "%icon% %{T8}%index%%{T-}"
 label-urgent-font = 3
 label-urgent-foreground = ${xrdb:color1:#c6c6c6}
 label-urgent-padding = 2
 
-label-occupied = "%icon% %{T8}%name%%{T-}"
+label-occupied = "%icon% %{T8}%index%%{T-}"
 label-occupied-font = 3
 label-occupied-padding = 2
 label-occupied-foreground = ${xrdb:color7:#8abeb7}
 
-label-empty = "%icon% %{T8}%name%%{T-}"
+label-empty = "%icon% %{T8}%index%%{T-}"
 label-empty-font = 3
 label-empty-padding = 2
 label-empty-foreground = ${xrdb:color8:#8abeb7}
