@@ -35,3 +35,5 @@ bspc rule -a Vivaldi-stable desktop=2
 bspc rule -a ParaView state=floating
 bspc rule -a yakyak desktop=4
 bspc rule -a mpv desktop=6
+bspc rule -a Steam desktop=5 state=floating
+bspc rule -a discord desktop=4

@@ -35,7 +35,6 @@ fi
 # add custom.js
 if [ -f "$patch_dir/vivaldi.js" ] ; then
     # copy js
-    echo cp -f "$patch_dir/vivaldi.js" "$vivaldi_path/resources/vivaldi/style/custom.js"
     cp -f "$patch_dir/vivaldi.js" "$vivaldi_path/resources/vivaldi/style/custom.js"
 
     # patch browser.html
