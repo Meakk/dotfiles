@@ -2,20 +2,20 @@
 rofi_command="rofi -theme ~/.cache/wal/powermenu.rasi"
 
 # Each of the icon is a selectable element
-options=$'\n\n\n'
+options=$'\n\n痢\nﮤ'
 
 chosen="$(echo "$options" | $rofi_command -dmenu)"
 case $chosen in
-    ) # Lock the screen
-        sleep 0.3; ~/.config/i3/lock.sh
+    ) # Lock the screen
+        sleep 0.3; sh $HOME/.cache/wal/lock.sh
         ;;
-    ) # Shutdown the computer
+    ﮤ) # Shutdown the computer
         poweroff
         ;;
-    ) # Reboot the computer
+    痢) # Reboot the computer
         reboot
         ;;
-    ) # Log out of the current session
+    ) # Log out of the current session
         bspc quit
         ;;
 esac

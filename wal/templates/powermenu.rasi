@@ -23,7 +23,7 @@ listview {{
 
 /* List of entries top right bottom left */
 element {{
-    font: "Font Awesome 5 Free 80";
+    font: "Symbols Nerd Font 80";
     padding: 46px 0px 20px -105px;
     border: 0px 0px 8px 0px;
 }}
