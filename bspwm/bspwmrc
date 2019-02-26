@@ -27,7 +27,6 @@ bspc config split_ratio               0.52
 bspc config gapless_monocle           true
 bspc config single_monocle            true
 bspc config focus_follows_pointer     true
-bspc config pointer_follows_focus     true
 bspc config remove_unplugged_monitors true
 
 bspc rule -a qt5ct state=floating
@@ -35,4 +34,4 @@ bspc rule -a feh state=floating
 bspc rule -a Vivaldi-stable desktop=2
 bspc rule -a ParaView state=floating
 bspc rule -a yakyak desktop=4
-
+bspc rule -a mpv desktop=6

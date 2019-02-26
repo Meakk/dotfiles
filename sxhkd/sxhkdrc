@@ -46,7 +46,7 @@ super + {_,shift + }{Left,Down,Up,Right}
 
 # focus or send to the given desktop
 super + {_,ctrl + ,shift + }{1-9}
-	bspc {desktop -f,desktop -s,node -d} {1-9}
+	bspc {desktop -f,desktop -s,node -d} '^{1-9}'
 
 # move desktop
 super + ctrl + {Left,Right}
