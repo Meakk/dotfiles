@@ -13,10 +13,10 @@ line-size = 3
 border-size = 0
 border-color = ${xrdb:foreground:#c6c6c6}
 
-font-0 = "Roboto:size=9:weight=medium;2"
-font-1 = "Symbols Nerd Font:style=2048-em:size=12;1"
+font-0 = "Roboto:size=9:weight=bold;3"
+font-1 = "Symbols Nerd Font:style=2048-em:size=12;2"
 font-2 = "DejaVu Sans:size=22:antialias=false;2"
-font-3 = "Roboto:size=7;-4"
+font-3 = "Roboto:size=7;7"
 
 tray-position = none
 
@@ -94,7 +94,7 @@ mount-0 = /
 interval = 10
 format-mounted = <label-mounted>
 label-mounted = %free%
-format-mounted-prefix = 
+format-mounted-prefix = 力
 format-mounted-prefix-foreground = ${xrdb:color4:#8abeb7}
 format-mounted-prefix-padding-right = 1
 format-mounted-padding = 2
@@ -102,7 +102,7 @@ format-mounted-padding = 2
 [module/bsp]
 type = internal/bspwm
 
-ws-icon-0 = 1;
+ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
@@ -110,7 +110,7 @@ ws-icon-4 = 5;
 ws-icon-5 = 6;
 ws-icon-6 = Desktop;
 
-pin-workspaces = true
+pin-workspaces = false
 
 format = <label-state> <label-mode>
 format-padding-left = 5
@@ -119,9 +119,11 @@ format-padding-right = 2
 label-focused = "%icon% %{T4}%index%%{T-}"
 label-focused-font = 2
 label-focused-foreground = ${xrdb:color4:#8abeb7}
-label-focused-underline-size = 3
-label-focused-underline = ${xrdb:color4:#8abeb7}
+label-focused-overline-size = 3
+label-focused-overline = ${xrdb:color4:#8abeb7}
 label-focused-padding = 2
+
+label-dimmed-overline = ${xrdb:background:#8abeb7}
 
 label-urgent = "%icon% %{T4}%index%%{T-}"
 label-urgent-font = 2
@@ -161,8 +163,8 @@ label-mode-background = ${xrdb:foreground:#1f1f1f}
 label-focused = %icon%
 label-focused-font = 2
 label-focused-foreground = ${xrdb:foreground:#8abeb7}
-label-focused-underline-size = 3
-label-focused-underline = ${xrdb:foreground:#8abeb7}
+label-focused-overline-size = 3
+label-focused-overline = ${xrdb:foreground:#8abeb7}
 label-focused-padding = 2
 
 label-unfocused = %icon%
@@ -250,7 +252,10 @@ format-connected = <ramp-signal><label-connected>
 format-connected-padding = 2
 label-connected = %local_ip% (%essid%)
 
-format-disconnected =
+format-disconnected = <label-disconnected>
+format-disconnected-padding = 2
+label-disconnected = 睊
+label-disconnected-foreground = ${xrdb:color1:#8abeb7}
 
 ramp-signal-0 = 直
 ramp-signal-1 = 直
@@ -267,12 +272,14 @@ interval = 3
 
 format-connected-padding = 2
 
-format-connected-prefix = 
+format-connected-prefix = 
 format-connected-prefix-padding-right = 1
 format-connected-prefix-foreground = ${xrdb:color4:#8abeb7}
 label-connected = %local_ip%
 
-format-disconnected =
+format-disconnected = 
+format-disconnected-padding = 2
+format-disconnected-foreground = ${xrdb:color1:#8abeb7}
 
 [module/date]
 type = internal/date
