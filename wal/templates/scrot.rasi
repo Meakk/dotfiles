@@ -9,7 +9,6 @@
 }}
 
 window {{
-    padding: 440px 640px;
     children: [listview];
 }}
 
@@ -24,7 +23,7 @@ listview {{
 /* List of entries top right bottom left */
 element {{
     font: "Symbols Nerd Font 80";
-    padding: 46px 0px 20px -105px;
+    padding: 50px 0px 0px -95px;
     border: 0px 0px 8px 0px;
     background-color: @background;
 }}

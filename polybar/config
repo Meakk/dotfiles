@@ -30,9 +30,9 @@ inherit = bar/base
 
 border-bottom-size = 1
 
-modules-left = slope2 slope4 arch slope2 updates-arch-combined bsp
+modules-left = slope2 slope4 arch slope2 bsp
 modules-center = 
-modules-right = gmail available-space vpn eth wlan volume date battery slope3 powermenu slope1 slope3
+modules-right = updates gmail available-space vpn eth wlan volume date battery slope3 powermenu slope1 slope3
 
 [bar/bottombar]
 inherit = bar/base
@@ -52,13 +52,13 @@ click-left = bspc node -c
 
 [module/landscape]
 type = custom/text
-content = 
+content = 
 content-padding = 5
 click-left = $HOME/.config/scripts/monitor_landscape.sh
 
 [module/portrait]
 type = custom/text
-content = 
+content = 
 content-padding = 5
 click-left = $HOME/.config/scripts/monitor_portrait.sh
 
@@ -79,11 +79,11 @@ content-background = ${xrdb:foreground:#8abeb7}
 content-foreground = ${xrdb:background:#1f1f1f}
 click-left = $HOME/.config/rofi/scripts/drun.sh
 
-[module/updates-arch-combined]
+[module/updates]
 type = custom/script
 exec = ~/.config/polybar/updates-arch-combined.sh
 interval = 600
-format-prefix = 
+format-prefix = 
 format-prefix-foreground = ${xrdb:color4:#8abeb7}
 format-prefix-padding-right = 1
 format-padding = 2
@@ -94,7 +94,7 @@ mount-0 = /
 interval = 10
 format-mounted = <label-mounted>
 label-mounted = %free%
-format-mounted-prefix = 力
+format-mounted-prefix = 
 format-mounted-prefix-foreground = ${xrdb:color4:#8abeb7}
 format-mounted-prefix-padding-right = 1
 format-mounted-padding = 2
@@ -104,11 +104,11 @@ type = internal/bspwm
 
 ws-icon-0 = 1;
 ws-icon-1 = 2;
-ws-icon-2 = 3;
+ws-icon-2 = 3;﬏
 ws-icon-3 = 4;
 ws-icon-4 = 5;
 ws-icon-5 = 6;
-ws-icon-6 = Desktop;
+ws-icon-6 = Desktop;
 
 pin-workspaces = false
 
@@ -143,12 +143,16 @@ label-empty-foreground = ${xrdb:color8:#8abeb7}
 [module/i3]
 type = internal/i3
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
 
 pin-workspaces = true
 
