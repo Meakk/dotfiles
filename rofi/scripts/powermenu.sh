@@ -1,22 +1,16 @@
-#!/bin/bash
-rofi_command="rofi -theme ~/.cache/wal/powermenu.rasi"
+#!/usr/bin/env fish
 
-# Each of the icon is a selectable element
-options=$'\n\n痢\n襤'
+# padding depending on resolution
+set -l resolution (xrandr | grep (bspc query -m -M --names) | sed -r 's/(.*) ([[:digit:]]+x[[:digit:]]+)(.*)/\2/')
+set -l padding (expr (echo $resolution | cut -d 'x' -f 2) / 2 - 100)px (expr (echo $resolution | cut -d 'x' -f 1) / 2 - 430)px
 
-chosen="$(echo "$options" | $rofi_command -dmenu)"
-case $chosen in
-    ) # Lock the screen
+switch (echo -e "\n\n痢\n襤" | rofi -theme ~/.cache/wal/powermenu.rasi -dmenu -theme-str "window { padding: $padding; }")
+    case  # Lock the screen
         sleep 0.3; sh $HOME/.cache/wal/lock.sh
-        ;;
-    襤) # Shutdown the computer
+    case 襤 # Shutdown the computer
         poweroff
-        ;;
-    痢) # Reboot the computer
+    case 痢 # Reboot the computer
         reboot
-        ;;
-    ) # Log out of the current session
+    case  # Log out of the current session
         bspc quit
-        ;;
-esac
-
+end
