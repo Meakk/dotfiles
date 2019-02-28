@@ -4,7 +4,7 @@ monitor = ${env:MONITOR}
 width = 100%
 height = 22
 radius = 0
-fixed-center = false
+fixed-center = true
 
 background = ${xrdb:background:#1f1f1f}
 foreground = ${xrdb:foreground:#c6c6c6}
@@ -13,7 +13,7 @@ line-size = 3
 border-size = 0
 border-color = ${xrdb:foreground:#c6c6c6}
 
-font-0 = "Roboto:size=9:weight=bold;3"
+font-0 = "Roboto:size=9:weight=bold;2"
 font-1 = "Symbols Nerd Font:style=2048-em:size=12;2"
 font-2 = "DejaVu Sans:size=22:antialias=false;2"
 font-3 = "Roboto:size=7;7"
@@ -31,8 +31,8 @@ inherit = bar/base
 border-bottom-size = 1
 
 modules-left = slope2 slope4 arch slope2 bsp
-modules-center = 
-modules-right = updates gmail available-space vpn eth wlan volume date battery slope3 powermenu slope1 slope3
+modules-center = date time
+modules-right = updates gmail available-space vpn eth wlan volume battery slope3 powermenu slope1 slope3
 
 [bar/bottombar]
 inherit = bar/base
@@ -285,22 +285,31 @@ format-disconnected = 
 format-disconnected-padding = 2
 format-disconnected-foreground = ${xrdb:color1:#8abeb7}
 
-[module/date]
+[module/time]
 type = internal/date
 interval = 5
 
-date =
-date-alt = " %d/%m"
-
 time = %H:%M
-time-alt = %H:%M
 
 format-prefix = 
 format-prefix-padding-right = 1
 format-prefix-foreground = ${xrdb:color4:#8abeb7}
 format-padding = 2
 
-label = %date% %time%
+label = %time%
+
+[module/date]
+type = internal/date
+interval = 600
+
+date = %a, %b %d
+
+format-prefix = 
+format-prefix-padding-right = 1
+format-prefix-foreground = ${xrdb:color4:#8abeb7}
+format-padding = 2
+
+label = %date%
 
 [module/battery]
 type = internal/battery

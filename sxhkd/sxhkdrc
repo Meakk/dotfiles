@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	kitty
+	$TERMINAL
 
 # notification test
 super + i
@@ -26,7 +26,7 @@ XF86MonBrightness{Up,Down}
 
 # program launcher / powermenu / scrot
 super + {d,0,Print}
-	$HOME/.config/rofi/scripts/{drun,powermenu,scrot}.sh
+	$HOME/.config/rofi/scripts/{drun,powermenu,scrot}.fish
 
 # close and kill
 super + {_,ctrl + ,shift + }a
