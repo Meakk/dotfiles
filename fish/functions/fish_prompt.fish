@@ -9,12 +9,6 @@ function fish_prompt
         end
     end
 
-    function _repeat
-        for i in (seq $argv[2])
-            printf $argv[1]
-        end
-    end
-
     function _caret
         if test $USER = 'root'
             echo -n -s (set_color -o red) "# "
@@ -112,7 +106,7 @@ function fish_prompt
     echo
     echo -n -s $header_left
     if test $fill_spaces -gt 0
-        echo -n -s (_repeat ' ' $fill_spaces) $header_right
+        echo -n -s (string repeat -n $fill_spaces " ") $header_right
     end
     echo
 

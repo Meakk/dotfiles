@@ -1,16 +1,19 @@
 #!/usr/bin/env sh
 
-# Run this before setting the keyboard layout to avoid issues with numbers
-sxhkd &
+setxkbmap us # avoid issues with numbers bindings
+pkill sxhkd; sxhkd &
+setxkbmap fr
 
 nitrogen --restore
 pkill compton; compton -b --blur-method kawase --blur-strength 8
 pkill dunst; dunst -conf ~/.cache/wal/dunstrc &
 $HOME/.config/polybar/launch.sh
 numlockx on
-setxkbmap fr
 
-bspc monitor -d 1 2 3 4 5 6
+# no compositor on toad
+if [[ $HOSTNAME != 'toad' ]]; then
+  pkill compton; compton -b --blur-method kawase --blur-strength 8
+fi
 
 # colors
 source ~/.cache/wal/colors.sh
@@ -40,11 +43,21 @@ bspc rule -a discord desktop=4
 
 startup_lock_file=/tmp/bspwm-startup.lock
 if [ ! -f $startup_lock_file ]; then
-  echo "dummy" > $startup_lock_file
+  touch $startup_lock_file
   # auto start
   if [[ $HOSTNAME == 'bowser' ]]; then
+    bspc monitor -d Desktop 1 2 5
     vivaldi-stable&
     steam-runtime&
+  fi
+  if [[ $HOSTNAME == 'peach' ]]; then
+    bspc monitor -d Desktop 1 2 3 3 4
+    vivaldi-stable&
+    yakyak&
+  fi
+  if [[ $HOSTNAME == 'toad' ]]; then
+    bspc monitor -d Desktop 2 6
+    firefox&
   fi
 fi
 

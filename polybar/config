@@ -31,8 +31,8 @@ inherit = bar/base
 border-bottom-size = 1
 
 modules-left = slope2 slope4 arch slope2 bsp
-modules-center = date time
-modules-right = updates gmail available-space vpn eth wlan volume battery slope3 powermenu slope1 slope3
+modules-center = date
+modules-right = gmail updates available-space vpn eth wlan volume battery slope3 powermenu slope1 slope3
 
 [bar/bottombar]
 inherit = bar/base
@@ -285,31 +285,19 @@ format-disconnected = 
 format-disconnected-padding = 2
 format-disconnected-foreground = ${xrdb:color1:#8abeb7}
 
-[module/time]
-type = internal/date
-interval = 5
-
-time = %H:%M
-
-format-prefix = 
-format-prefix-padding-right = 1
-format-prefix-foreground = ${xrdb:color4:#8abeb7}
-format-padding = 2
-
-label = %time%
-
 [module/date]
 type = internal/date
 interval = 600
 
 date = %a, %b %d
+time = %H:%M
 
-format-prefix = 
+format-prefix = 
 format-prefix-padding-right = 1
 format-prefix-foreground = ${xrdb:color4:#8abeb7}
 format-padding = 2
 
-label = %date%
+label = %time% | %date%
 
 [module/battery]
 type = internal/battery

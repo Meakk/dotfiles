@@ -12,14 +12,16 @@ switch (echo -e "\n\nﬓ" | rofi -theme ~/.cache/wal/scrot.rasi -dmenu -th
         if test -n $slop
             set -l img (date +"%Y-%m-%d-%H%M%S")_(echo $slop | cut -d "+" -f 1).png
             import -window root -crop $slop ~/$img
-            notify-send "Screeshot saved : $img"
+            notify-send "Screeshot saved" $img
         end
     case  # Scrot the whole screen
         sleep 1
         set -l img (date +"%Y-%m-%d-%H%M%S")_desktop.png
         import -window root ~/$img
+        notify-send "Screeshot saved" $img
     case ﬓ # Scrot the active window
         sleep 1
         set -l img (date +"%Y-%m-%d-%H%M%S")_window.png
         import -window (bspc query -n -N) ~/$img
+        notify-send "Screeshot saved" $img
 end
