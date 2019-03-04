@@ -1,74 +1,66 @@
-let colors = {};
+let colors = {{}};
 
 colors.Bg = '{background.rgba}'.split(',');
-colors.BgAlpha = [ colors.Bg[0], colors.Bg[1], colors.Bg[2], 0.8 ];
-colors.BgAlphaHeavy = [ Math.floor(colors.Bg[0]*0.75), Math.floor(colors.Bg[1]*0.75), Math.floor(colors.Bg[2]*0.75), 0.6 ];
-colors.BgAlphaHeavier = [ Math.floor(colors.Bg[0]*0.5), Math.floor(colors.Bg[1]*0.5), Math.floor(colors.Bg[2]*0.5), 0.2 ];
-
-/*
-
-  --colorBg: #1f1f1f;
-  --colorBgAlpha: rgba(31,31,31,0.8);
-  --colorBgAlphaHeavy: rgba(24,24,24,0.6);
-  --colorBgAlphaHeavier: rgba(16,16,16,0.2);
-  --colorBgDark: #1b1b1b;
-  --colorBgDarker: #141414;
-  --colorBgLight: #252525;
-  --colorBgLighter: #2a2a2a;
-  --colorBgLightIntense: #252525;
-  --colorBgIntense: #181818;
-  --colorBgIntenser: #101010;
-  --colorBgInverse: #232323;
-  --colorBgInverser: #2a2a2a;
-  --colorBgFaded: #2a2a2a;
-  --colorFg: #c6c6c6;
-  --colorFgAlpha: rgba(198,198,198,0.1);
-  --colorFgIntense: #ececec;
-  --colorFgFaded: #a1a1a1;
-  --colorFgFadedMore: #7e7e7e;
-  --colorHighlightBg: #ff8080;
-  --colorHighlightBgAlpha: rgba(255,128,128,0.25);
-  --colorHighlightBgDark: #e36869;
-  --colorHighlightFg: #f6f6f6;
-  --colorHighlightFgAlpha: rgba(246,246,246,0.5);
-  --colorHighlightFgAlphaHeavy: rgba(246,246,246,0.25);
-  --colorAccentBg: #8abeb7;
-  --colorAccentBgAlpha: rgba(197,251,243,0.4);
-  --colorAccentBgAlphaHeavy: rgba(197,251,243,0.25);
-  --colorAccentBgDark: #77aaa4;
-  --colorAccentBgDarker: #5b8e87;
-  --colorAccentBgFaded: #98cdc6;
-  --colorAccentBgFadedMore: #a2d7d0;
-  --colorAccentBgFadedMost: #c5fbf3;
-  --colorAccentBorder: #7eb2ab;
-  --colorAccentBorderDark: #6b9e98;
-  --colorAccentFg: #111111;
-  --colorAccentFgFaded: #4e6864;
-  --colorAccentFgAlpha: rgba(17,17,17,0.25);
-  --colorBorder: #161616;
-  --colorBorderHighlight: #d06b6b;
-  --colorBorderDisabled: #1a1a1a;
-  --colorBorderIntense: #000000;
-
-*/
+colors.BgAlpha = '{background.rgb}'.split(',').concat(0.8);
+colors.BgAlphaHeavy = '{background.rgb}'.split(',').concat(0.6);
+colors.BgAlphaHeavier = '{background.rgb}'.split(',').concat(0.2);
+colors.BgDark = '{background.rgba}'.split(',');
+colors.BgDarker = '{background.rgba}'.split(',');
+colors.BgLight = '{background.rgba}'.split(',');
+colors.BgLighter = '{background.rgba}'.split(',');
+colors.BgLightIntense = '{background.rgba}'.split(',');
+colors.BgIntense = '{background.rgba}'.split(',');
+colors.BgIntenser = '{background.rgba}'.split(',');
+colors.BgInverse = '{background.rgba}'.split(',');
+colors.BgInverser = '{background.rgba}'.split(',');
+colors.BgFaded = '{background.rgba}'.split(',');
+colors.Fg = '{foreground.rgba}'.split(',');
+colors.FgAlpha = '{foreground.rgb}'.split(',').concat(0.1);
+colors.FgIntense = '{foreground.rgba}'.split(',');
+colors.FgFaded = '{foreground.rgba}'.split(',');
+colors.FgFadedMore = '{foreground.rgba}'.split(',');
+colors.HighlightBg = '{color9.rgba}'.split(',');
+colors.HighlightBgAlpha = '{color9.rgb}'.split(',').concat(0.25);
+colors.HighlightBgDark = '{color1.rgba}'.split(',');
+colors.HighlightFg = '{foreground.rgba}'.split(',');
+colors.HighlightFgAlpha = '{foreground.rgb}'.split(',').concat(0.5);
+colors.HighlightFgAlphaHeavy = '{foreground.rgb}'.split(',').concat(0.25);
+colors.AccentBg = '{color4.rgba}'.split(',');
+colors.AccentBgAlpha = '{color4.rgb}'.split(',').concat(0.4);
+colors.AccentBgAlphaHeavy = '{color4.rgb}'.split(',').concat(0.25);
+colors.AccentBgDark = '{color4.rgba}'.split(',');
+colors.AccentBgDarker = '{color4.rgba}'.split(',');
+colors.AccentBgFaded = '{color12.rgba}'.split(',');
+colors.AccentBgFadedMore = '{color12.rgba}'.split(',');
+colors.AccentBgFadedMost = '{color12.rgba}'.split(',');
+colors.AccentBorder = '{color13.rgba}'.split(',');
+colors.AccentBorderDark = '{color5.rgba}'.split(',');
+colors.AccentFg = '{foreground.rgba}'.split(',');
+colors.AccentFgFaded = '{foreground.rgba}'.split(',');
+colors.AccentFgAlpha = '{foreground.rgb}'.split(',').concat(0.25);
+colors.Border = '{color0.rgba}'.split(',');
+colors.BorderHighlight = '{color0.rgba}'.split(',');
+colors.BorderDisabled = '{color0.rgba}'.split(',');
+colors.BorderIntense = '{background.rgba}'.split(',');
 
 function inject() {{
   // remove header
-  document.getElementById("header").remove();
+  document.getElementById("header").style.display = 'none';
 
   // remove new tab button
-  document.getElementsByClassName("newtab")[0].remove();
+  document.getElementsByClassName("newtab")[0].style.display = 'none';
+
+  // get app
+  let app = document.getElementById('app');
 
   // override css vars
   for (c in colors)
-    document.body.style.setProperty('--color' + c, 'rgba(' + colors[c].joint(',') + ')');
-
+    app.style.setProperty('--color' + c, 'rgba(' + colors[c].join(',') + ') !important');
 }};
 
 // wait for browser to load
 setTimeout(function wait() {{
-  const tabs = document.getElementById('tabs-container');
-  if (tabs) {{
+  if (document.getElementsByClassName('newtab').length == 1) {{
     inject();
   }}
   else {{

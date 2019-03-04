@@ -38,8 +38,8 @@ if [ -f "$patch_dir/vivaldi.js" ] ; then
     cp -f "$patch_dir/vivaldi.js" "$vivaldi_path/resources/vivaldi/style/custom.js"
 
     # patch browser.html
-    js_patched=$(grep '<script src="custom.js"><\/script>' $vivaldi_path/resources/vivaldi/browser.html)
+    js_patched=$(grep '<script src="style/custom.js"><\/script>' $vivaldi_path/resources/vivaldi/browser.html)
     if [ "$js_patched" = "" ] ; then
-        sed -i -e 's/<\/body>/<script src="custom.js"><\/script> <\/body>/' "$vivaldi_path/resources/vivaldi/browser.html"
+        sed -i -e 's/<\/body>/<script src="style\/custom.js"><\/script> <\/body>/' "$vivaldi_path/resources/vivaldi/browser.html"
     fi
 fi
