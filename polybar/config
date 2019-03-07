@@ -289,7 +289,7 @@ format-disconnected-foreground = ${xrdb:color1:#8abeb7}
 type = internal/date
 interval = 5
 
-date = %a, %b %d
+date = %A, %d/%m
 time = %H:%M
 
 format-prefix = 
