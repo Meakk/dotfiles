@@ -77,7 +77,7 @@ content = 
 content-padding = 2
 content-background = ${xrdb:foreground:#8abeb7}
 content-foreground = ${xrdb:background:#1f1f1f}
-click-left = $HOME/.config/rofi/scripts/drun.sh
+click-left = $HOME/.config/rofi/scripts/drun.fish
 
 [module/updates]
 type = custom/script
