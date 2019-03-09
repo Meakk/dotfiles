@@ -1,7 +1,3 @@
-#
-# wm independent hotkeys
-#
-
 # terminal emulator
 super + Return
 	$TERMINAL
@@ -17,6 +13,8 @@ super + l
 # volume
 XF86Audio{Raise,Lower}Volume
 	pactl set-sink-volume 2 {+,-}5%
+
+# mute audio
 XF86AudioMute
 	pactl set-sink-mute 2 toggle
 
@@ -48,6 +46,10 @@ super + {_,shift + }{Left,Down,Up,Right}
 super + {_,ctrl + ,shift + }{1-9}
 	bspc {desktop -f,desktop -s,node -d} '^{1-9}'
 
+# create desktop
+super + {_,shift + }F{1-6}
+    bspc {monitor -a,desktop -n} {1-6}
+
 # move desktop
 super + ctrl + {Left,Right}
 	bspc desktop -m {prev, next} --follow
@@ -56,9 +58,13 @@ super + ctrl + {Left,Right}
 super + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
-#
-# state/flags
-#
+# preselect
+super + ctrl + {Left,Down,Up,Right}
+    bspc node -p {west,south,north,east}
+
+# move to preselected
+super + p
+    bspc node -n 'last.!automatic.local'
 
 # set the window state
 super + {t,shift + t,s,f}
