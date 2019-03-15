@@ -6,8 +6,18 @@ set -x QT_LOGGING_RULES "qt5ct.debug=false"
 set -x TERMINAL kitty
 set -x EDITOR vim
 
+# prepend paths
+set -x fish_user_paths $HOME/.node_modules/bin
+
 # SXHKD fix
 set -x SXHKD_SHELL /usr/bin/bash
+
+# NPM
+set -x npm_config_prefix $HOME/.node_modules
+
+# Development
+set -x CC clang
+set -x CXX clang++
 
 # desktop configuration
 set -x polybar_top true

@@ -1,0 +1,30 @@
+#!/usr/bin/env sh
+
+icon="ﮮ"
+
+if ! updates_arch=$(checkupdates 2> /dev/null | wc -l ); then
+    updates_arch=0
+fi
+
+if ! updates_aur=$(yay -Qum 2> /dev/null | wc -l); then
+    updates_aur=0
+fi
+
+updates=$(("$updates_arch" + "$updates_aur"))
+
+source ~/.cache/wal/colors.sh
+
+if [ "$updates" -gt 0 ]; then
+    update_kernel=$(checkupdates 2> /dev/null | grep "linux " | wc -l)
+    if [ "$update_kernel" -gt 0 ]; then
+        echo -n "%{F$color1}"
+    else
+        echo -n "%{F$color4}"
+    fi
+    echo -n "$icon%{F-} $updates_arch"
+    if [ "$updates_aur" -gt 0 ]; then
+        echo -n " (+$updates_aur)"
+    fi
+else
+    echo ""
+fi

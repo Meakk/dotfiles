@@ -81,11 +81,8 @@ click-left = $HOME/.config/rofi/scripts/drun.fish
 
 [module/updates]
 type = custom/script
-exec = ~/.config/polybar/updates-arch-combined.sh
+exec = ~/.config/polybar/updates.sh
 interval = 600
-format-prefix = 
-format-prefix-foreground = ${xrdb:color4:#8abeb7}
-format-prefix-padding-right = 1
 format-padding = 2
 
 [module/available-space]
@@ -310,11 +307,14 @@ label-full = %percentage%%
 
 format-discharging = <ramp-capacity><label-discharging>
 format-charging = <ramp-capacity><label-charging>
-format-full = <ramp-capacity><label-full>
+format-full = <label-full>
 
 format-discharging-padding = 2
 format-charging-padding = 2
 format-full-padding = 2
+format-full-prefix = 
+format-full-prefix-foreground = ${xrdb:color4:#8abeb7}
+format-full-prefix-padding-right = 1
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
