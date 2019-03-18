@@ -46,7 +46,7 @@ if [ ! -f $startup_lock_file ]; then
   touch $startup_lock_file
   # auto start
   if [[ $HOSTNAME == 'bowser' ]]; then
-    bspc monitor -d Desktop 1 2 5
+    bspc monitor -d Desktop 1 2 4 5
     vivaldi-stable&
     steam-runtime&
   fi
