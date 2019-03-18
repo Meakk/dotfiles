@@ -8,7 +8,7 @@ switch (echo -e "\n\nﬓ" | rofi -theme ~/.cache/wal/scrot.rasi -dmenu -th
     case  # Scrot a rectangular area
         set -l color (string split "," (cat ~/.cache/wal/slop))
         for i in 1 2 3; set color[$i] (math $color[$i]/255); end
-        set -l slop (slop -f "%g" -c (string join "," $color),1.0 -b 3 -p 2 -t 0)
+        set -l slop (slop -f "%g" -l -c (string join "," $color),0.4 -b 3 -p 2 -t 0)
         if test -n $slop
             set -l img (date +"%Y-%m-%d-%H%M%S")_(echo $slop | cut -d "+" -f 1).png
             import -window root -crop $slop ~/$img
