@@ -5,7 +5,12 @@ function fish_greeting
   set -l highlg (set_color -o yellow)
   set -l accent (set_color -o blue)
   set -l normal (set_color -o normal)
-  
+
+  set wm "No X running"
+  if test -n "$DISPLAY"
+    set wm (xprop -id (xprop -root -notype _NET_SUPPORTING_WM_CHECK | cut -d# -f2 | xargs) -notype -len 100 -f _NET_WM_NAME 8t | grep _NET_WM_NAME | cut -d= -f2 | xargs)
+  end
+
   echo -s $dots[1] $spacing $highlg $USER "@" (hostname)
   echo -s $dots[2] $spacing $accent "OS:       " $normal (cat /etc/os-release | grep PRETTY_NAME | cut -d= -f2 | xargs)
   echo -s $dots[3] $spacing $accent "KERNEL:   " $normal (uname -sr)
@@ -13,6 +18,6 @@ function fish_greeting
   echo -s $dots[5] $spacing $accent "PACKAGES: " $normal (pacman -Q | wc -l)
   echo -s $dots[6] $spacing $accent "TERMINAL: " $normal $TERMINAL
   echo -s $dots[7] $spacing $accent "SHELL:    " $normal (basename $SHELL)
-  echo -s $dots[8] $spacing $accent "WM:       " $normal (tail -n 1 "/home/$LOGNAME/.xinitrc" | cut -d' ' -f2)
+  echo -s $dots[8] $spacing $accent "WM:       " $normal $wm
 end
 
