@@ -9,7 +9,7 @@ fixed-center = true
 background = ${xrdb:background:#1f1f1f}
 foreground = ${xrdb:foreground:#c6c6c6}
 
-line-size = 3
+line-size = 2
 border-size = 0
 border-color = ${xrdb:foreground:#c6c6c6}
 
@@ -30,9 +30,9 @@ inherit = bar/base
 
 border-bottom-size = 1
 
-modules-left = slope2 slope4 arch slope2 bsp
+modules-left = ${env:MODULES_LEFT}
 modules-center = date
-modules-right = gmail updates available-space vpn eth wlan volume battery slope3 powermenu slope1 slope3
+modules-right = ${env:MODULES_RIGHT}
 
 [bar/bottombar]
 inherit = bar/base
@@ -44,6 +44,11 @@ modules-center =
 modules-right = close
 bottom = true
 
+[module/padding]
+type = custom/text
+content = " "
+content-padding = 2
+
 [module/close]
 type = custom/text
 content = 
@@ -54,13 +59,13 @@ click-left = bspc node -c
 type = custom/text
 content = 
 content-padding = 5
-click-left = $HOME/.config/scripts/monitor_landscape.sh
+click-left = $HOME/.config/scripts/monitor_landscape
 
 [module/portrait]
 type = custom/text
 content = 
 content-padding = 5
-click-left = $HOME/.config/scripts/monitor_portrait.sh
+click-left = $HOME/.config/scripts/monitor_portrait
 
 [module/gmail]
 type = custom/script
@@ -77,11 +82,11 @@ content = 
 content-padding = 2
 content-background = ${xrdb:foreground:#8abeb7}
 content-foreground = ${xrdb:background:#1f1f1f}
-click-left = $HOME/.config/rofi/scripts/drun.fish
+click-left = $HOME/.config/rofi/scripts/drun
 
 [module/updates]
 type = custom/script
-exec = ~/.config/polybar/updates.sh
+exec = ~/.config/polybar/updates
 interval = 600
 format-padding = 2
 
@@ -116,7 +121,7 @@ format-padding-right = 2
 label-focused = "%icon% %{T4}%index%%{T-}"
 label-focused-font = 2
 label-focused-foreground = ${xrdb:color4:#8abeb7}
-label-focused-overline-size = 3
+label-focused-overline-size = 2
 label-focused-overline = ${xrdb:color4:#8abeb7}
 label-focused-padding = 2
 
@@ -164,7 +169,7 @@ label-mode-background = ${xrdb:foreground:#1f1f1f}
 label-focused = %icon%
 label-focused-font = 2
 label-focused-foreground = ${xrdb:foreground:#8abeb7}
-label-focused-overline-size = 3
+label-focused-overline-size = 2
 label-focused-overline = ${xrdb:foreground:#8abeb7}
 label-focused-padding = 2
 
@@ -283,18 +288,16 @@ format-disconnected-padding = 2
 format-disconnected-foreground = ${xrdb:color1:#8abeb7}
 
 [module/date]
-type = internal/date
+type = custom/script
+exec = date +"%H:%M | %A, %d/%m"
 interval = 5
-
-date = %A, %d/%m
-time = %H:%M
 
 format-prefix = 
 format-prefix-padding-right = 1
 format-prefix-foreground = ${xrdb:color4:#8abeb7}
 format-padding = 2
 
-label = %time% | %date%
+click-left = $HOME/.config/scripts/pop_cal
 
 [module/battery]
 type = internal/battery

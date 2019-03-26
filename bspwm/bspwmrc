@@ -5,9 +5,8 @@ pkill sxhkd; sxhkd &
 setxkbmap fr
 
 nitrogen --restore
-pkill compton; compton -b --blur-method kawase --blur-strength 8
 pkill dunst; dunst -conf ~/.cache/wal/dunstrc &
-$HOME/.config/polybar/launch.sh
+$HOME/.config/polybar/launch
 numlockx on
 
 # no compositor on toad

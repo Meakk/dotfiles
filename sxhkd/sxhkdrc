@@ -8,7 +8,7 @@ super + i
 
 # lock
 super + l
-	sh $HOME/.cache/wal/lock.sh
+	sh $HOME/.cache/wal/lock
 
 # volume
 XF86Audio{Raise,Lower}Volume
@@ -24,7 +24,7 @@ XF86MonBrightness{Up,Down}
 
 # program launcher / powermenu / scrot
 super + {d,0,Print}
-	$HOME/.config/rofi/scripts/{drun,powermenu,scrot}.fish
+	$HOME/.config/rofi/scripts/{drun,powermenu,scrot}
 
 # close and kill
 super + {_,ctrl + ,shift + }a

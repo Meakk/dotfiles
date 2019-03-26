@@ -1,0 +1,22 @@
+#!/usr/bin/env fish
+
+pkill n30f
+
+source ~/.cache/wal/colors.fish
+
+set -l mpos (xdotool getmouselocation | sed -e 's/x:\(.*\) y:.*/\1/')
+
+rm /tmp/cal.png > /dev/null
+
+printf (string repeat -n 32 ' ')▼\n\n(string join '\n' (cal -m -Y)) | convert -background "$background" \
+  -fill "$foreground" \
+  -font "Fira-Code-Medium" \
+  -bordercolor "$background" -border 20x2 \
+  -bordercolor "$foreground" -border 1 \
+  -pointsize 12 \
+  label:@- /tmp/cal.png
+
+set -l resolution (string split ' ' (identify /tmp/cal.png | sed -e 's/.*PNG \([0-9]\+\)x\([0-9]\+\) .*/\1 \2/'))
+
+n30f -x (math "round($mpos - $resolution[1]/2)") -y 22 -c "pkill n30f" /tmp/cal.png
+
