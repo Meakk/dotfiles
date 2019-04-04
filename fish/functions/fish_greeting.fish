@@ -18,6 +18,11 @@ function fish_greeting
   echo -s $dots[5] $spacing $accent "PACKAGES: " $normal (pacman -Q | wc -l)
   echo -s $dots[6] $spacing $accent "TERMINAL: " $normal $TERMINAL
   echo -s $dots[7] $spacing $accent "SHELL:    " $normal (basename $SHELL)
-  echo -s $dots[8] $spacing $accent "WM:       " $normal $wm
+  echo -n -s $dots[8] $spacing $accent
+  if test -n "$DISPLAY"
+    echo -s "WM:       " $normal (xprop -id (xprop -root -notype _NET_SUPPORTING_WM_CHECK | cut -d# -f2 | xargs) -notype -len 100 -f _NET_WM_NAME 8t | grep _NET_WM_NAME | cut -d= -f2 | xargs)
+  else
+      echo -s "FREE /:   " $normal (df -h / | tail -1 | cut -d' ' -f5)
+  end
 end
 
