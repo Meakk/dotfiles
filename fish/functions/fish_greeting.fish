@@ -22,7 +22,7 @@ function fish_greeting
   if test -n "$DISPLAY"
     echo -s "WM:       " $normal (xprop -id (xprop -root -notype _NET_SUPPORTING_WM_CHECK | cut -d# -f2 | xargs) -notype -len 100 -f _NET_WM_NAME 8t | grep _NET_WM_NAME | cut -d= -f2 | xargs)
   else
-      echo -s "FREE /:   " $normal (df -h / | tail -1 | cut -d' ' -f5)
+      echo -s "FREE:     " $normal (df -Ph / | tail -1 | awk '{print $4}')
   end
 end
 
