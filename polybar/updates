@@ -15,7 +15,7 @@ updates=$(("$updates_arch" + "$updates_aur"))
 source ~/.cache/wal/colors.sh
 
 if [ "$updates" -gt 0 ]; then
-    update_kernel=$(checkupdates 2> /dev/null | grep "linux " | wc -l)
+    update_kernel=$(checkupdates 2> /dev/null | grep "^linux " | wc -l)
     if [ "$update_kernel" -gt 0 ]; then
         echo -n "%{F$color1}"
     else
