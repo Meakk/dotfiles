@@ -39,6 +39,7 @@ bspc rule -a yakyak desktop=4
 bspc rule -a mpv desktop=6
 bspc rule -a discord desktop=4
 bspc rule -a Steam desktop=5
+bspc rule -a Peek state=floating
 
 startup_lock_file=/tmp/bspwm-startup.lock
 if [ ! -f $startup_lock_file ]; then
