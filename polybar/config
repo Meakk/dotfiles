@@ -90,6 +90,8 @@ exec = ~/.config/polybar/updates
 interval = 600
 format-padding = 2
 
+click-left = $HOME/.config/scripts/pop_updates
+
 [module/available-space]
 type = internal/fs
 mount-0 = /

@@ -17,7 +17,6 @@ def update_count():
     labels = gmail.users().labels().get(userId='me', id='INBOX').execute()
     count = labels['messagesUnread']
     print(count)
-    return count
 
 try:
     if pathlib.Path(CREDENTIALS_PATH).is_file():
