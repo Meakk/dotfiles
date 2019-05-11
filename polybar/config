@@ -6,12 +6,12 @@ height = 22
 radius = 0
 fixed-center = true
 
-background = ${xrdb:background:#1f1f1f}
-foreground = ${xrdb:foreground:#c6c6c6}
+background = ${xrdb:background}
+foreground = ${xrdb:foreground}
 
 line-size = 2
 border-size = 0
-border-color = ${xrdb:foreground:#c6c6c6}
+border-color = ${xrdb:foreground}
 
 font-0 = "Roboto:size=9:weight=bold;2"
 font-1 = "Symbols Nerd Font:style=2048-em:size=12;2"
@@ -72,7 +72,7 @@ type = custom/script
 exec = ~/.config/polybar/gmail/launch.py
 interval = 60
 format-prefix = 
-format-prefix-foreground = ${xrdb:color4:#8abeb7}
+format-prefix-foreground = ${xrdb:color4}
 format-prefix-padding-right = 1
 format-padding = 2
 
@@ -80,8 +80,8 @@ format-padding = 2
 type = custom/text
 content = 
 content-padding = 2
-content-background = ${xrdb:foreground:#8abeb7}
-content-foreground = ${xrdb:background:#1f1f1f}
+content-background = ${xrdb:foreground}
+content-foreground = ${xrdb:background}
 click-left = $HOME/.config/rofi/scripts/drun
 
 [module/updates]
@@ -99,7 +99,7 @@ interval = 10
 format-mounted = <label-mounted>
 label-mounted = %free%
 format-mounted-prefix = 
-format-mounted-prefix-foreground = ${xrdb:color4:#8abeb7}
+format-mounted-prefix-foreground = ${xrdb:color4}
 format-mounted-prefix-padding-right = 1
 format-mounted-padding = 2
 
@@ -122,27 +122,27 @@ format-padding-right = 2
 
 label-focused = "%icon% %{T4}%index%%{T-}"
 label-focused-font = 2
-label-focused-foreground = ${xrdb:color4:#8abeb7}
+label-focused-foreground = ${xrdb:color4}
 label-focused-overline-size = 2
-label-focused-overline = ${xrdb:color4:#8abeb7}
+label-focused-overline = ${xrdb:color4}
 label-focused-padding = 2
 
-label-dimmed-overline = ${xrdb:background:#8abeb7}
+label-dimmed-overline = ${xrdb:background}
 
 label-urgent = "%icon% %{T4}%index%%{T-}"
 label-urgent-font = 2
-label-urgent-foreground = ${xrdb:color1:#c6c6c6}
+label-urgent-foreground = ${xrdb:color1}
 label-urgent-padding = 2
 
 label-occupied = "%icon% %{T4}%index%%{T-}"
 label-occupied-font = 2
 label-occupied-padding = 2
-label-occupied-foreground = ${xrdb:color7:#8abeb7}
+label-occupied-foreground = ${xrdb:color7}
 
 label-empty = "%icon% %{T4}%index%%{T-}"
 label-empty-font = 2
 label-empty-padding = 2
-label-empty-foreground = ${xrdb:color8:#8abeb7}
+label-empty-foreground = ${xrdb:color8}
 
 [module/i3]
 type = internal/i3
@@ -165,29 +165,29 @@ wrapping-scroll = false
 format-padding = 1
 
 label-mode-padding = 8
-label-mode-foreground = ${xrdb:color1:#8abeb7}
-label-mode-background = ${xrdb:foreground:#1f1f1f}
+label-mode-foreground = ${xrdb:color1}
+label-mode-background = ${xrdb:foreground}
 
 label-focused = %icon%
 label-focused-font = 2
-label-focused-foreground = ${xrdb:foreground:#8abeb7}
+label-focused-foreground = ${xrdb:foreground}
 label-focused-overline-size = 2
-label-focused-overline = ${xrdb:foreground:#8abeb7}
+label-focused-overline = ${xrdb:foreground}
 label-focused-padding = 2
 
 label-unfocused = %icon%
 label-unfocused-font = 2
 label-unfocused-padding = 2
-label-unfocused-foreground = ${xrdb:color8:#8abeb7}
+label-unfocused-foreground = ${xrdb:color8}
 
 label-visible = %icon%
 label-visible-font = 2
 label-visible-padding = 2
-label-visible-foreground = ${xrdb:color8:#8abeb7}
+label-visible-foreground = ${xrdb:color8}
 
 label-urgent = %icon%
 label-urgent-font = 2
-label-urgent-foreground = ${xrdb:color1:#c6c6c6}
+label-urgent-foreground = ${xrdb:color1}
 label-urgent-padding = 2
 
 [module/title]
@@ -197,27 +197,27 @@ format-padding = 2
 
 label = %title%
 label-maxlen = 50
-label-foreground = ${xrdb:foreground:#8abeb7}
+label-foreground = ${xrdb:foreground}
 
 [module/slope1]
 type = custom/text
 content = "%{T3}◣%{T-}"
-content-foreground = ${xrdb:foreground:#8abeb7}
+content-foreground = ${xrdb:foreground}
 
 [module/slope2]
 type = custom/text
 content = "%{T3}◤%{T-}"
-content-foreground = ${xrdb:foreground:#8abeb7}
+content-foreground = ${xrdb:foreground}
 
 [module/slope3]
 type = custom/text
 content = "%{T3}◥%{T-}"
-content-foreground = ${xrdb:foreground:#8abeb7}
+content-foreground = ${xrdb:foreground}
 
 [module/slope4]
 type = custom/text
 content = "%{T3}◢%{T-}"
-content-foreground = ${xrdb:foreground:#8abeb7}
+content-foreground = ${xrdb:foreground}
 
 [module/volume]
 type = internal/pulseaudio
@@ -230,14 +230,14 @@ format-volume-padding = 2
 ramp-volume-0 = 奄
 ramp-volume-1 = 奔
 ramp-volume-2 = 墳
-ramp-volume-foreground = ${xrdb:color4:#8abeb7}
+ramp-volume-foreground = ${xrdb:color4}
 ramp-volume-padding-right = 2
 
 label-volume = "%percentage%%"
 
 format-muted= <label-muted>
 label-muted = ﱝ
-label-muted-foreground = ${xrdb:color1:#ff8080}
+label-muted-foreground = ${xrdb:color1}
 format-muted-padding = 2
 
 [module/vpn]
@@ -246,7 +246,7 @@ interface = ${env:polybar_tun}
 interval = 3
 
 format-connected = ﱾ
-format-connected-foreground = ${xrdb:color1:#ff8080}
+format-connected-foreground = ${xrdb:color1}
 format-connected-padding = 2
 
 format-disconnected =
@@ -263,14 +263,14 @@ label-connected = %local_ip% (%essid%)
 format-disconnected = <label-disconnected>
 format-disconnected-padding = 2
 label-disconnected = 睊
-label-disconnected-foreground = ${xrdb:color1:#8abeb7}
+label-disconnected-foreground = ${xrdb:color1}
 
 ramp-signal-0 = 直
 ramp-signal-1 = 直
 ramp-signal-2 = 直
 ramp-signal-3 = 直
 ramp-signal-4 = 直
-ramp-signal-foreground = ${xrdb:color4:#8abeb7}
+ramp-signal-foreground = ${xrdb:color4}
 ramp-signal-padding-right = 1
 
 [module/eth]
@@ -282,12 +282,12 @@ format-connected-padding = 2
 
 format-connected-prefix = 
 format-connected-prefix-padding-right = 1
-format-connected-prefix-foreground = ${xrdb:color4:#8abeb7}
+format-connected-prefix-foreground = ${xrdb:color4}
 label-connected = %local_ip%
 
 format-disconnected = 
 format-disconnected-padding = 2
-format-disconnected-foreground = ${xrdb:color1:#8abeb7}
+format-disconnected-foreground = ${xrdb:color1}
 
 [module/date]
 type = custom/script
@@ -296,7 +296,7 @@ interval = 5
 
 format-prefix = 
 format-prefix-padding-right = 1
-format-prefix-foreground = ${xrdb:color4:#8abeb7}
+format-prefix-foreground = ${xrdb:color4}
 format-padding = 2
 
 click-left = $HOME/.config/scripts/pop_cal
@@ -318,7 +318,7 @@ format-discharging-padding = 2
 format-charging-padding = 2
 format-full-padding = 2
 format-full-prefix = 
-format-full-prefix-foreground = ${xrdb:color4:#8abeb7}
+format-full-prefix-foreground = ${xrdb:color4}
 format-full-prefix-padding-right = 1
 
 ramp-capacity-0 = 
@@ -332,33 +332,33 @@ ramp-capacity-7 = 
 ramp-capacity-8 = 
 ramp-capacity-9 = 
 ramp-capacity-10 = 
-ramp-capacity-0-foreground = ${xrdb:color1:#8abeb7}
-ramp-capacity-foreground = ${xrdb:color4:#8abeb7}
+ramp-capacity-0-foreground = ${xrdb:color1}
+ramp-capacity-foreground = ${xrdb:color4}
 ramp-capacity-padding-right = 1
 
 [module/powermenu]
 type = custom/menu
 
 expand-right = true
-format-background = ${xrdb:foreground:#8abeb7}
-format-foreground = ${xrdb:background:#1f1f1f}
+format-background = ${xrdb:foreground}
+format-foreground = ${xrdb:background}
 
 format-padding = 2
 
 label-open = 
 label-close = ﰸ cancel
 label-separator = "    "
-label-separator-foreground = ${xrdb:background:#1f1f1f}
+label-separator-foreground = ${xrdb:background}
 
 menu-0-0 = 痢 reboot
-menu-0-0-foreground = ${xrdb:color1:#8abeb7}
+menu-0-0-foreground = ${xrdb:color1}
 menu-0-0-exec = reboot
 menu-0-1 = ﮤ poweroff
-menu-0-1-foreground = ${xrdb:color1:#8abeb7}
+menu-0-1-foreground = ${xrdb:color1}
 menu-0-1-exec = poweroff
 menu-0-2 =  logoff
 menu-0-2-exec = pkill -KILL -u $USER
-menu-0-2-foreground = ${xrdb:color1:#8abeb7}
+menu-0-2-foreground = ${xrdb:color1}
 
 [settings]
 screenchange-reload = true
