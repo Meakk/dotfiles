@@ -33,6 +33,9 @@ set -x fish_color_quote F1FA8C
 set -x fish_color_redirection FF79C6
 set -x fish_color_end F1FA8C
 
+# aliases
+alias n 'ninja -k0'
+
 # special config
 if test $hostname = 'toad'
   set -x TERMINAL alacritty
