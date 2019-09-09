@@ -5,13 +5,14 @@ pkill n30f
 source ~/.cache/wal/colors.fish
 
 set -l mpos (xdotool getmouselocation | sed -e 's/x:\(.*\) y:.*/\1/')
-setenv COLUMNS 120
+setenv COLUMNS 80
 
 rm /tmp/update.png > /dev/null
 
 printf (string join '\n' (checkupdates | cut -d' ' -f1 | column -x | expand)) | convert -background "$background" \
   -fill "$foreground" \
   -font "Fira-Code-Medium" \
+  -depth 8 \
   -bordercolor "$background" -border 20x2 \
   -bordercolor "$foreground" -border 1 \
   -pointsize 12 \
@@ -20,4 +21,3 @@ printf (string join '\n' (checkupdates | cut -d' ' -f1 | column -x | expand)) | 
 set -l resolution (string split ' ' (identify /tmp/update.png | sed -e 's/.*PNG \([0-9]\+\)x\([0-9]\+\) .*/\1 \2/'))
 
 n30f -x (math "round($mpos - $resolution[1]/2)") -y 22 -c "pkill n30f" /tmp/update.png
-
