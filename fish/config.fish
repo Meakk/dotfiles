@@ -18,6 +18,7 @@ set -x npm_config_prefix $HOME/.node_modules
 # Development
 set -x CC clang
 set -x CXX clang++
+set -x PKGEXT '.pkg.tar.lzo'
 
 # desktop configuration
 set -x polybar_top true
