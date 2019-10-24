@@ -46,6 +46,7 @@ bspc rule -a CCTEGViewer state=floating
 bspc rule -a qapitrace state=floating
 bspc rule -a Designer state=floating
 bspc rule -a nv-nsight-gfx.bin state=floating
+bspc rule -a mpv state=floating
 
 startup_lock_file=/tmp/bspwm-startup.lock
 if [ ! -f $startup_lock_file ]; then

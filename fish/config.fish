@@ -1,6 +1,6 @@
 # QT theming
-set -x QT_QPA_PLATFORMTHEME qt5ct
-set -x QT_LOGGING_RULES "qt5ct.debug=false"
+set -x QT_STYLE_OVERRIDE Breeze
+set -x XDG_CURRENT_DESKTOP KDE
 
 # preferred tools
 set -x TERMINAL kitty
