@@ -1,6 +1,5 @@
 # QT theming
 set -x QT_STYLE_OVERRIDE Breeze
-set -x XDG_CURRENT_DESKTOP KDE
 
 # preferred tools
 set -x TERMINAL kitty
