@@ -14,6 +14,12 @@ if [[ $HOSTNAME != 'toad' ]]; then
   pkill compton; compton -b --blur-method kawase --blur-strength 8
 fi
 
+# xinput
+if [[ $HOSTNAME != 'peach' ]]; then
+  xinput set-prop 13 319 1
+  xinput set-prop 13 323 1
+fi
+
 # colors
 source ~/.cache/wal/colors.sh
 
