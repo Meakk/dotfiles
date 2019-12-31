@@ -55,23 +55,26 @@ bspc rule -a qapitrace state=floating
 bspc rule -a Designer state=floating
 bspc rule -a nv-nsight-gfx.bin state=floating
 bspc rule -a mpv state=floating
+bspc rule -a VBoxSDL desktop=7
 
 startup_lock_file=/tmp/bspwm-startup.lock
 if [ ! -f $startup_lock_file ]; then
   touch $startup_lock_file
   # auto start
   if [[ $HOSTNAME == 'bowser' ]]; then
-    bspc monitor -d Desktop 1 2 4 5
+    bspc monitor -d 1 2 4 5
     vivaldi-stable&
     steam-runtime&
   fi
   if [[ $HOSTNAME == 'peach' ]]; then
-    bspc monitor -d Desktop 1 2 3 3 4
+    bspc monitor -d 1 2 7
+    bspc monitor next -d 3 3
+    bspc monitor next -d 4
     vivaldi-stable&
     yakyak&
   fi
   if [[ $HOSTNAME == 'toad' ]]; then
-    bspc monitor -d Desktop 2 6
+    bspc monitor -d 2 6
     firefox&
   fi
 fi

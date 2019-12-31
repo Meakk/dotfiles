@@ -10,6 +10,10 @@ super + i
 super + l
 	sh $HOME/.cache/wal/lock
 
+# launch Windows
+super + m
+    vboxsdl --startvm Windows
+
 # volume
 XF86Audio{Raise,Lower}Volume
 	pactl set-sink-volume 2 {+,-}5%
@@ -47,8 +51,8 @@ super + {_,ctrl + ,shift + }{1-9}
 	bspc {desktop -f,desktop -s,node -d} '^{1-9}'
 
 # create desktop
-super + {_,shift + }F{1-6}
-    bspc {monitor -a,desktop -n} {1-6}
+super + {_,shift + }F{1-7}
+    bspc {monitor -a,desktop -n} {1-7}
 
 # move desktop
 super + ctrl + {Left,Right}
