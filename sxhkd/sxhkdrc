@@ -10,9 +10,9 @@ super + i
 super + l
 	sh $HOME/.cache/wal/lock
 
-# launch Windows
-super + m
-    vboxsdl --startvm Windows
+# launch Windows (super+W)
+super + z
+	$HOME/.config/scripts/launch_vm
 
 # volume
 XF86Audio{Raise,Lower}Volume

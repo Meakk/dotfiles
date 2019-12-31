@@ -1,0 +1,11 @@
+#!/bin/bash
+pid="$(pgrep -x VBoxSDL)"
+
+if [[ -z $pid ]]
+then
+    vboxsdl --startvm Windows &
+    notify-send "Windows launched"
+else
+    notify-send "Windows is already running" "PID: $pid"
+fi
+

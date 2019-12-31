@@ -165,7 +165,7 @@ icon_position = left
 max_icon_size = 50
 
 # Paths to default icons.
-icon_path = /usr/share/icons/breeze-dark/16x16/mimetypes/:/usr/share/icons/breeze-dark/48x48/status/:/usr/share/icons/breeze-dark/16x16/devices/:/usr/share/icons/breeze-dark/48x48/notifications/:/usr/share/icons/breeze-dark/48x48/emblems/:/usr/share/icons/breeze-dark/apps/scalable
+icon_path = /usr/share/icons/breeze-dark/mimetypes/16/:/usr/share/icons/breeze-dark/status/48:/usr/share/icons/breeze-dark/devices/16:/usr/share/icons/breeze-dark/notifications/48:/usr/share/icons/breeze-dark/emblems/16:/usr/share/icons/breeze-dark/actions/16/
 
 frame_width = 3
 
