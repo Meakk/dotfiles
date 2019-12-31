@@ -24,4 +24,4 @@ switch (echo -e "\n\nﬓ" | rofi -theme ~/.cache/wal/scrot.rasi -dmenu -th
 end
 
 xclip -selection clipboard -t image/png -i ~/$img
-notify-send "Screeshot saved" $img
+notify-send -i ~/$img "Screeshot saved" $img

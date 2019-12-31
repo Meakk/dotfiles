@@ -9,6 +9,8 @@ pkill dunst; dunst -conf ~/.cache/wal/dunstrc &
 $HOME/.config/polybar/launch
 numlockx on
 
+pkill xautolock; xautolock -time 2 -locker $HOME/.cache/wal/lock &
+
 # no compositor on toad
 if [[ $HOSTNAME != 'toad' ]]; then
   pkill compton; compton -b --blur-method kawase --blur-strength 8
