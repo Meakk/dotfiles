@@ -67,9 +67,9 @@ if [ ! -f $startup_lock_file ]; then
     steam-runtime&
   fi
   if [[ $HOSTNAME == 'peach' ]]; then
-    bspc monitor -d 1 2 7
-    bspc monitor next -d 3 3
-    bspc monitor next -d 4
+    bspc monitor ^1 -d 1 4 7
+    bspc monitor ^2 -d 3 3
+    bspc monitor ^3 -d 2
     vivaldi-stable&
     yakyak&
   fi
