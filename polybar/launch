@@ -21,6 +21,9 @@ for mon in $lines
     case 'bowser'
       set -x MODULES_LEFT 'padding bsp'
       set -x MODULES_RIGHT 'updates gmail available-space eth volume battery padding'
+    case 'ray'
+      set -x MODULES_LEFT 'padding bsp'
+      set -x MODULES_RIGHT 'updates gmail available-space eth volume padding'
   end
   polybar topbar &
 end
