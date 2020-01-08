@@ -103,6 +103,17 @@ format-mounted-prefix-foreground = ${xrdb:color4}
 format-mounted-prefix-padding-right = 1
 format-mounted-padding = 2
 
+[module/available-space-data]
+type = internal/fs
+mount-0 = /mnt/data
+interval = 10
+format-mounted = <label-mounted>
+label-mounted = %free%
+format-mounted-prefix = 
+format-mounted-prefix-foreground = ${xrdb:color4}
+format-mounted-prefix-padding-right = 1
+format-mounted-padding = 2
+
 [module/bsp]
 type = internal/bspwm
 
