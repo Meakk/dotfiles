@@ -12,7 +12,7 @@ numlockx on
 pkill xautolock; xautolock -time 2 -locker $HOME/.cache/wal/lock &
 
 # no compositor on toad and bowser
-if [ "$hostname" != 'toad' ] || [ "$hostname" != 'bowser']; then
+if [ "$HOSTNAME" != 'toad' ] || [ "$HOSTNAME" != 'bowser']; then
   pkill compton; compton -b --blur-method kawase --blur-strength 8
 fi
 
@@ -55,23 +55,23 @@ startup_lock_file=/tmp/bspwm-startup.lock
 if [ ! -f $startup_lock_file ]; then
   touch $startup_lock_file
   # auto start
-  if [ $hostname == 'bowser' ]; then
+  if [ $HOSTNAME == 'bowser' ]; then
     bspc monitor -d 1 2 4 5
     vivaldi-stable&
     steam-runtime&
   fi
-  if [ $hostname == 'peach' ]; then
+  if [ $HOSTNAME == 'peach' ]; then
     bspc monitor -d 1 2 3 4 7
     vivaldi-stable&
     yakyak&
   fi
-  if [ $hostname == 'ray' ]; then
+  if [ $HOSTNAME == 'ray' ]; then
     bspc monitor ^1 -d 3 3
     bspc monitor ^2 -d 1 2 4
     vivaldi-stable&
     yakyak&
   fi
-  if [ $hostname == 'toad' ]; then
+  if [ $HOSTNAME == 'toad' ]; then
     bspc monitor -d 2 6
     firefox&
   fi

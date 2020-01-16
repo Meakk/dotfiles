@@ -1,5 +1,6 @@
 # QT theming
-set -x QT_STYLE_OVERRIDE Breeze
+# set -x QT_STYLE_OVERRIDE Breeze
+set -x QT_QPA_PLATFORMTHEME qt5ct
 
 # preferred tools
 set -x TERMINAL kitty
