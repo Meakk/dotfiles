@@ -13,17 +13,17 @@ for mon in $lines
   switch $hostname
     case 'toad'
       set -x MODULES_LEFT 'slope2 slope4 arch slope2 bsp'
-      set -x MODULES_RIGHT 'updates gmail available-space wlan volume battery slope3 powermenu slope1 slope3'
+      set -x MODULES_RIGHT 'updates gmail available-space wlan dunst volume battery slope3 powermenu slope1 slope3'
       polybar bottombar &
     case 'peach'
       set -x MODULES_LEFT 'padding bsp'
-      set -x MODULES_RIGHT 'updates gmail available-space vpn eth wlan volume battery padding'
+      set -x MODULES_RIGHT 'updates gmail available-space vpn eth wlan dunst volume battery padding'
     case 'bowser'
       set -x MODULES_LEFT 'padding bsp'
-      set -x MODULES_RIGHT 'updates gmail available-space eth volume battery padding'
+      set -x MODULES_RIGHT 'updates gmail available-space eth dunst volume battery padding'
     case 'ray'
       set -x MODULES_LEFT 'padding bsp'
-      set -x MODULES_RIGHT 'updates gmail available-space available-space-data eth volume padding'
+      set -x MODULES_RIGHT 'updates gmail available-space available-space-data eth dunst volume padding'
   end
   polybar topbar &
 end

@@ -9,7 +9,7 @@ pkill dunst; dunst -conf ~/.cache/wal/dunstrc &
 $HOME/.config/polybar/launch
 numlockx on
 
-pkill xautolock; xautolock -time 2 -locker $HOME/.cache/wal/lock &
+pkill xautolock; xautolock -time 5 -locker $HOME/.cache/wal/lock &
 
 # no compositor on toad and bowser
 if [ "$HOSTNAME" != 'toad' ] || [ "$HOSTNAME" != 'bowser']; then
