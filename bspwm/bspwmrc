@@ -63,13 +63,11 @@ if [ ! -f $startup_lock_file ]; then
   if [ $HOSTNAME == 'peach' ]; then
     bspc monitor -d 1 2 3 4 7
     vivaldi-stable&
-    yakyak&
   fi
   if [ $HOSTNAME == 'ray' ]; then
     bspc monitor ^1 -d 3 3
     bspc monitor ^2 -d 1 2 4
     vivaldi-stable&
-    yakyak&
   fi
   if [ $HOSTNAME == 'toad' ]; then
     bspc monitor -d 2 6
