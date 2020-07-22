@@ -123,8 +123,8 @@ type = custom/ipc
 initial = 1
 format-foreground = ${xrdb:color4}
 
-hook-0 = echo "%{A1:notify-send "DUNST_COMMAND_PAUSE" && polybar-msg hook dunst 2:}%{A}"
-hook-1 = echo "%{A1:notify-send "DUNST_COMMAND_RESUME" && polybar-msg hook dunst 1:}%{A}"
+hook-0 = echo "%{A1:pkill -USR1 dunst && polybar-msg hook dunst 2:}%{A}"
+hook-1 = echo "%{A1:pkill -USR2 dunst && polybar-msg hook dunst 1:}%{A}"
 
 [module/bsp]
 type = internal/bspwm

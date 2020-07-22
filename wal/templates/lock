@@ -4,7 +4,7 @@ foreground={foreground.strip}ff
 highlight={color4.strip}ff
 error={color1.strip}ff
 
-pkill -u "$USER" -USR1 dunst
+pkill -USR1 dunst
 
 i3lock --nofork --blur=10 --clock --indicator --line-uses-inside \
        --insidecolor="$background" --ringcolor="$foreground" \
@@ -14,4 +14,4 @@ i3lock --nofork --blur=10 --clock --indicator --line-uses-inside \
        --wrongcolor="$foreground" --timecolor="$foreground" --datecolor="$highlight" \
        --datestr="%A, %d/%m/%y"
 
-pkill -u "$USER" -USR2 dunst
+pkill -USR2 dunst
