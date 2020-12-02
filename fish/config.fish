@@ -48,6 +48,6 @@ if test $hostname = 'toad'
   set -x polybar_bat BATC
 end
 if test $hostname = 'bowser'
-  set -x polybar_wlan wlp5s0
-  set -x polybar_eth enp3s0
+  set -x polybar_wlan wlp7s0
+  set -x polybar_eth eno1
 end

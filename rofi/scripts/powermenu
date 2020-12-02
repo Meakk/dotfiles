@@ -1,16 +1,34 @@
-#!/usr/bin/env fish
+#!/usr/bin/env bash
 
-# padding depending on resolution
-set -l resolution (xrandr | grep (bspc query -m -M --names) | sed -r 's/(.*) ([[:digit:]]+x[[:digit:]]+)(.*)/\2/')
-set -l padding (expr (echo $resolution | cut -d 'x' -f 2) / 2 - 100)px (expr (echo $resolution | cut -d 'x' -f 1) / 2 - 430)px
+## Author : Aditya Shakya (adi1090x)
+## Mail : adi1090x@gmail.com
+## Github : @adi1090x
+## Reddit : @adi1090x
 
-switch (echo -e "\n\n痢\n襤" | rofi -theme ~/.cache/wal/powermenu.rasi -dmenu -theme-str "window { padding: $padding; }")
-    case  # Lock the screen
+rofi_command="rofi -theme $HOME/.cache/wal/powermenu.rasi"
+uptime=$(uptime -p | sed -e 's/up //g')
+
+# Options
+shutdown="襤"
+reboot="痢"
+lock=""
+logout=""
+
+# Variable passed to rofi
+options="$shutdown\n$reboot\n$lock\n$logout"
+
+chosen="$(echo -e "$options" | $rofi_command -p "UP - $uptime" -dmenu -selected-row 2)"
+case $chosen in
+    $shutdown)
+        systemctl poweroff
+        ;;
+    $reboot)
+        systemctl reboot
+        ;;
+    $lock)
         sleep 0.3; sh $HOME/.cache/wal/lock.sh
-    case 襤 # Shutdown the computer
-        poweroff
-    case 痢 # Reboot the computer
-        reboot
-    case  # Log out of the current session
+        ;;
+    $logout)
         bspc quit
-end
+        ;;
+esac

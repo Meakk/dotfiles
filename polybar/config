@@ -2,21 +2,21 @@
 monitor = ${env:MONITOR}
 
 width = 100%
-height = 22
+height = 40
 radius = 0
 fixed-center = true
 
 background = ${xrdb:background}
 foreground = ${xrdb:foreground}
 
-line-size = 2
+line-size = 3
 border-size = 0
 border-color = ${xrdb:foreground}
 
-font-0 = "Roboto:size=9:weight=bold;2"
-font-1 = "Symbols Nerd Font:style=2048-em:size=12;2"
-font-2 = "DejaVu Sans:size=22:antialias=false;2"
-font-3 = "Roboto:size=7;7"
+font-0 = "Roboto:size=16:weight=bold;4"
+font-1 = "Symbols Nerd Font:style=2048-em:size=22;5"
+font-2 = "DejaVu Sans:size=40:antialias=false;4"
+font-3 = "Roboto:size=14;10"
 
 tray-position = none
 
@@ -30,7 +30,7 @@ enable-ipc = true
 [bar/topbar]
 inherit = bar/base
 
-border-bottom-size = 1
+border-bottom-size = 2
 
 modules-left = ${env:MODULES_LEFT}
 modules-center = date

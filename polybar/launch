@@ -20,7 +20,7 @@ for mon in $lines
       set -x MODULES_RIGHT 'updates gmail available-space vpn eth wlan dunst volume battery padding'
     case 'bowser'
       set -x MODULES_LEFT 'padding bsp'
-      set -x MODULES_RIGHT 'updates gmail available-space eth dunst volume battery padding'
+      set -x MODULES_RIGHT 'updates gmail available-space eth wlan dunst volume padding'
     case 'ray'
       set -x MODULES_LEFT 'padding bsp'
       set -x MODULES_RIGHT 'updates gmail available-space available-space-data eth dunst volume padding'

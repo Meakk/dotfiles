@@ -4,6 +4,8 @@ setxkbmap us # avoid issues with numbers bindings
 pkill sxhkd; sxhkd &
 setxkbmap fr
 
+xrdb -merge ~/.Xresources
+
 nitrogen --restore
 pkill dunst; dunst -conf ~/.cache/wal/dunstrc &
 $HOME/.config/polybar/launch
