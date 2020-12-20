@@ -8,7 +8,7 @@ function fish_greeting
 
   if test (uname) = "Darwin"
     set -g os "MacOSX"
-    set -g packages (brew list -1 | wc -l | sed 's/^ *//')
+    set -g packages (brew list --formula -1 | wc -l | sed 's/^ *//')
     set -g uptime (uptime | sed 's/.*up *//' | sed 's/,.*//')
   else
     set -g os (cat /etc/os-release | grep PRETTY_NAME | cut -d= -f2 | xargs)
