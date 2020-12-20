@@ -1,40 +1,116 @@
 * {{
-    background:       {color0};
-    background-light: {color8};
-    foreground:       {foreground};
-    urgent:           {color1};
-    /* Base values for all */
-    text-color:       @foreground;
-    background-color: @background;
+  /* General */
+  text-font:                            "Roboto 12";
+  icon-font:                            "Symbols Nerd Font 50";
+
+  listview-spacing:                      30px;
+
+  menu-window-padding:                   5px 15px;
+  menu-inputbar-margin:                  10px 0px;
+  menu-prompt-padding:                   10px 20px 10px 20px;
+  menu-prompt-margin:                    0px 0px 0px -2px;
+  menu-element-border:                   0px;
+  menu-element-padding:                  20px 30px 70px 20px;
+
+  accent:           {color4};
+  background:       {color0};
+  background-light: {color8};
+  foreground:       {foreground};
+  on:               {color2};
+  off:              {color1};
 }}
 
-window {{
-    padding: 440px 530px;
-    children: [listview];
+/* ########### */
+
+* {{
+  background-color: @background;
+  text-color: @foreground;
+  font: @icon-font;
 }}
 
-listview {{
-    spacing: 20px;
-    columns: 4;
-    lines: 1;
-    orientation: horizontal;
-    fixed-height: true;
+#window {{
+  width: 650px;
+  height: 210px;
 }}
 
-/* List of entries top right bottom left */
-element {{
-    font: "Symbols Nerd Font 80";
-    padding: 50px 0px 0px -90px;
-    border: 0px 0px 8px 0px;
+#horibox {{
+  children: [ listview ];
+}}
+#listview {{
+  layout: horizontal;
+}}
+#element {{
+  padding: @option-element-padding;
+  background-color: @background;
+  border: 0px 0px 8px 0px;
+}}
+#element.selected {{
+  background-color: @background-light;
+  text-color: @accent;
+  border-color: @accent;
 }}
 
-element.normal {{
-    text-color: @foreground;
-    border-color: @background;
-}}
+/* ########### */
 
-element.selected {{
-    background-color: @background-light;
-    text-color: @urgent;
-    border-color: @urgent;
+* {{
+  font: @text-font;
+}}
+#window {{
+  padding: @menu-window-padding;
+  children: [ inputbar, horibox ];
+}}
+#inputbar {{
+  children: [ textbox-prompt-colon, prompt ];
+  margin: @menu-inputbar-margin;
+}}
+prompt,
+textbox-prompt-colon {{
+  padding: @menu-prompt-padding;
+  border: 2px;
+  border-color: @accent;
+}}
+#prompt {{
+  margin: @menu-prompt-margin;
+  background-color: @background-light;
+  text-color: @accent;
+}}
+#textbox-prompt-colon {{
+  expand: false;
+  str: "System";
+  background-color: @accent;
+  text-color: @background;
+}}
+#horibox {{
+  padding: 0px;
+}}
+#listview {{
+  spacing: @listview-spacing;
+  lines: 4;
+}}
+#element-text {{
+  font: @icon-font;
+  border: @menu-element-border;
+  padding: @menu-element-padding;
+  border-color: @background-light;
+}}
+#element.selected {{
+  border-color: @accent;
+}}
+element.active,
+element.selected.urgent {{
+  background-color: @on;
+  text-color: @background;
+  border-color: @on;
+}}
+element.selected.urgent {{
+  border-color: @accent;
+}}
+element.urgent,
+element.selected.active {{
+  background-color: @off;
+  text-color: @background;
+  border-color: @off;
+}}
+element.selected.active {{
+  border-color: @accent;
 }}

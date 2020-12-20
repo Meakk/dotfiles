@@ -1,6 +1,6 @@
 rofi.show-icons: true
 rofi.modi: drun
-rofi.fullscreen: true
+
 rofi.terminal: kitty
 rofi.font: Roboto Medium 15
 rofi.cycle: true

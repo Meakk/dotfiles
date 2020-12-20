@@ -1,5 +1,5 @@
 * {{
-    urgent:           {color1};
+    urgent:           {color4};
     background:       {color0};
     background-light: {color8};
     foreground:       {foreground};
@@ -8,7 +8,7 @@
     text-color:       @foreground;
 }}
 window {{
-    padding: 28%;
+    padding: 20px;
 }}
 /* Input window */
 inputbar,

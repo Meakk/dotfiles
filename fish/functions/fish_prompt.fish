@@ -84,9 +84,9 @@ function fish_prompt
             set -l sub_minutes (math "$minutes % 60")
 
             set_color -o white
-            if test $hours -gt 24
+            if test $hours -gt 23
                 echo -s $days d
-            else if test $minutes -gt 60
+            else if test $minutes -gt 59
                 echo -s $sub_hours h $sub_minutes m
             else
                 echo -s $minutes m

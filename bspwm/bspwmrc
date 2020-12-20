@@ -4,12 +4,14 @@ setxkbmap us # avoid issues with numbers bindings
 pkill sxhkd; sxhkd &
 setxkbmap fr
 
+xrdb -merge ~/.Xresources
+
 nitrogen --restore
 pkill dunst; dunst -conf ~/.cache/wal/dunstrc &
 $HOME/.config/polybar/launch
 numlockx on
 
-pkill xautolock; xautolock -time 2 -locker $HOME/.cache/wal/lock &
+pkill xautolock; xautolock -time 5 -locker $HOME/.cache/wal/lock &
 
 # no compositor on toad and bowser
 if [ "$HOSTNAME" != 'toad' ] || [ "$HOSTNAME" != 'bowser']; then
@@ -63,13 +65,11 @@ if [ ! -f $startup_lock_file ]; then
   if [ $HOSTNAME == 'peach' ]; then
     bspc monitor -d 1 2 3 4 7
     vivaldi-stable&
-    yakyak&
   fi
   if [ $HOSTNAME == 'ray' ]; then
     bspc monitor ^1 -d 3 3
     bspc monitor ^2 -d 1 2 4
     vivaldi-stable&
-    yakyak&
   fi
   if [ $HOSTNAME == 'toad' ]; then
     bspc monitor -d 2 6
