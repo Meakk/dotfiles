@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-setxkbmap us # avoid issues with numbers bindings
+setxkbmap us -variant altgr-intl
 pkill sxhkd; sxhkd &
-setxkbmap fr
 
 xrdb -merge ~/.Xresources
 

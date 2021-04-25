@@ -1,5 +1,5 @@
 function fish_greeting
-  for c in (set_color -c | head -n 8)
+  for c in (set_color -c | grep -v br | head -n 8)
     set -a dots (echo -n -s (set_color $c) ● (set_color br$c) ● "  ")
   end
   set -l highlg (set_color -o yellow)
@@ -7,7 +7,7 @@ function fish_greeting
   set -l normal (set_color -o normal)
 
   if test (uname) = "Darwin"
-    set -g os "MacOSX"
+    set -g os "MacOS"
     set -g packages (brew list --formula -1 | wc -l | sed 's/^ *//')
     set -g uptime (uptime | sed 's/.*up *//' | sed 's/,.*//')
   else
