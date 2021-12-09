@@ -18,11 +18,11 @@ function fish_prompt
     end
 
     function _git_commit_hash
-        echo -s (set_color -o magenta) (git rev-parse --short HEAD ^/dev/null)
+        echo -s (set_color -o magenta) (git rev-parse --short HEAD 2> /dev/null)
     end
 
     function _git_branch_name
-        if set -l branch (git rev-parse --abbrev-ref HEAD ^/dev/null)
+        if set -l branch (git rev-parse --abbrev-ref HEAD 2> /dev/null)
             if test $branch = "HEAD"
                 echo -s (set_color -o red) DETACHED
             else
@@ -32,7 +32,7 @@ function fish_prompt
     end
 
     function _git_prompt_status
-        set -l index (git status -s --ignore-submodules ^/dev/null)
+        set -l index (git status -s --ignore-submodules 2> /dev/null)
         set -l git_state ""
         for val in $index
             if string match -q -r '^\?' $val
@@ -60,7 +60,7 @@ function fish_prompt
     end
 
     function _git_prompt_dirty
-        set -l dirty_status (git status -s --ignore-submodules ^/dev/null)
+        set -l dirty_status (git status -s --ignore-submodules 2> /dev/null)
         if test $status -eq 0
             if test (count $dirty_status) -ne 0
                 echo -s (set_color -o red) " ✗"
@@ -71,7 +71,7 @@ function fish_prompt
     end
 
     function _git_time_since_commit
-        set -l last_commit (git log --pretty=format:'%at' -1 ^/dev/null)
+        set -l last_commit (git log --pretty=format:'%at' -1 2> /dev/null)
         if test $status -eq 0
             set -l now (date +%s)
             set -l seconds_since_last_commit (math "$now - $last_commit")
