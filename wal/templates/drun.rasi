@@ -1,4 +1,5 @@
 * {{
+    font: "Roboto 24";
     urgent:           {color4};
     background:       {color0};
     background-light: {color8};
@@ -28,7 +29,7 @@ prompt {{
 }}
 textbox-prompt-colon {{
     expand: false;
-    str: "  : :  ";
+    str: " :: ";
     padding: 10px;
 }}
 entry {{
@@ -49,4 +50,8 @@ element.selected {{
     background-color: @background-light;
     text-color: @urgent;
     border-color: @urgent;
+}}
+element-text.selected {{
+    text-color: @urgent;
+    background-color: @background-light;
 }}

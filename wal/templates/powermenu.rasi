@@ -10,7 +10,7 @@
   menu-prompt-padding:                   10px 20px 10px 20px;
   menu-prompt-margin:                    0px 0px 0px -2px;
   menu-element-border:                   0px;
-  menu-element-padding:                  20px 30px 70px 20px;
+  menu-element-padding:                  5px 5px 5px 5px;
 
   accent:           {color4};
   background:       {color0};
@@ -29,8 +29,8 @@
 }}
 
 #window {{
-  width: 650px;
-  height: 210px;
+  width: 430px;
+  height: 170px;
 }}
 
 #horibox {{
