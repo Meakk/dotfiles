@@ -13,6 +13,9 @@ set -x fish_user_paths $HOME/.node_modules/bin
 # SXHKD fix
 set -x SXHKD_SHELL /usr/bin/bash
 
+# Fix for Android Studio
+set -x _JAVA_AWT_WM_NONREPARENTING 1
+
 # NPM
 set -x npm_config_prefix $HOME/.node_modules
 
