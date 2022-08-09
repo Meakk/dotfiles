@@ -7,6 +7,9 @@ set -x QT_LOGGING_RULES "qt5ct.debug=false"
 set -x TERMINAL kitty
 set -x EDITOR vim
 
+# valgrind workaround
+set -x DEBUGINFOD_URLS "https://debuginfod.archlinux.org"
+
 # prepend paths
 set -x fish_user_paths $HOME/.node_modules/bin
 
