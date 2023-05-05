@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
-switch (echo -e "\n\nﬓ" | rofi -p "" -theme ~/.cache/wal/scrot.rasi -dmenu)
-    case  # Scrot a rectangular area
+switch (echo -e "󰩭\n󰹑\n" | rofi -p "" -theme ~/.cache/wal/scrot.rasi -dmenu)
+    case 󰩭 # Scrot a rectangular area
         set -l color (string split "," (cat ~/.cache/wal/slop))
         for i in 1 2 3; set color[$i] (math $color[$i]/255); end
         set -l slop (slop -f "%g" -l -c (string join "," $color),0.4 -b 3 -p 2 -t 0)
@@ -9,11 +9,11 @@ switch (echo -e "\n\nﬓ" | rofi -p "" -theme ~/.cache/wal/scrot.rasi -dme
             set -g img (date +"%Y-%m-%d-%H%M%S")_(echo $slop | cut -d "+" -f 1).png
             import -window root -crop $slop ~/$img
         end
-    case  # Scrot the whole screen
+    case 󰹑 # Scrot the whole screen
         sleep 1
         set -g img (date +"%Y-%m-%d-%H%M%S")_desktop.png
         import -window root ~/$img
-    case ﬓ # Scrot the active window
+    case  # Scrot the active window
         sleep 1
         set -g img (date +"%Y-%m-%d-%H%M%S")_window.png
         import -window (bspc query -n -N) ~/$img

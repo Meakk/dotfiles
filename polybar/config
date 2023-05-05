@@ -83,7 +83,7 @@ click-left = $HOME/.config/scripts/monitor_portrait
 type = custom/script
 exec = ~/.config/polybar/gmail/launch.py
 interval = 60
-format-prefix = 
+format-prefix = 
 format-prefix-foreground = ${xrdb:color4}
 format-prefix-padding-right = 1
 format-padding = 2
@@ -139,14 +139,14 @@ hook-1 = echo "%{A1:pkill -USR2 dunst && polybar-msg hook dunst 1:}%{A}"
 [module/bsp]
 type = internal/bspwm
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
+ws-icon-0 = 1;
+ws-icon-1 = 2;
 ws-icon-2 = 3;﬏
 ws-icon-3 = 4;
 ws-icon-4 = 5;
 ws-icon-5 = 6;
 ws-icon-6 = 7;
-ws-icon-7 = Desktop;
+ws-icon-7 = Desktop;󰍹
 
 pin-workspaces = false
 
@@ -261,9 +261,9 @@ use-ui-max = false
 format-volume = <ramp-volume><label-volume>
 format-volume-padding = 2
 
-ramp-volume-0 = 奄
-ramp-volume-1 = 奔
-ramp-volume-2 = 墳
+ramp-volume-0 = 󰕿
+ramp-volume-1 = 󰖀
+ramp-volume-2 = 󰕾
 ramp-volume-foreground = ${xrdb:color4}
 ramp-volume-padding-right = 2
 
@@ -296,14 +296,14 @@ label-connected = %local_ip% (%essid%)
 
 format-disconnected = <label-disconnected>
 format-disconnected-padding = 2
-label-disconnected = 睊
+label-disconnected = 󰤮
 label-disconnected-foreground = ${xrdb:color1}
 
-ramp-signal-0 = 直
-ramp-signal-1 = 直
-ramp-signal-2 = 直
-ramp-signal-3 = 直
-ramp-signal-4 = 直
+ramp-signal-0 = 󰤯
+ramp-signal-1 = 󰤟
+ramp-signal-2 = 󰤢
+ramp-signal-3 = 󰤥
+ramp-signal-4 = 󰤨
 ramp-signal-foreground = ${xrdb:color4}
 ramp-signal-padding-right = 1
 

@@ -27,8 +27,12 @@ XF86MonBrightness{Up,Down}
 	light -{A,U} 10
 
 # program launcher / powermenu / scrot
-super + {d,0,Print}
-	$HOME/.config/rofi/scripts/{drun,powermenu,scrot}
+super + {d,0}
+	$HOME/.config/rofi/scripts/{drun,powermenu}
+
+# scrot
+super + shift + s
+	$HOME/.config/rofi/scripts/scrot
 
 # close and kill
 super + {_,ctrl + ,shift + }a

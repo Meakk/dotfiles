@@ -1,7 +1,7 @@
 * {{
   /* General */
   text-font:                            "Roboto 12";
-  icon-font:                            "Symbols Nerd Font 50";
+  icon-font:                            "Symbols Nerd Font 30";
 
   listview-spacing:                      30px;
 
